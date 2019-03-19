@@ -1,20 +1,20 @@
 <?php 
 
-include("Person.php");
-$a1=new Person("lyy1",1);
-$a2=new Person("lyy2",2);
+include("Student.php");
+$a1=new Student("lyy1",1);
+$a2=new Student("lyy2",2);
 
-$a3=new Person("lyy3",3);
+$a3=new Student("lyy3",3);
 
-$a4=new Person("lyy4",4);
+$a4=new Student("lyy4",4);
 
-$a5=new Person("lyy12",12);
+$a5=new Student("lyy12",12);
 
-$a6=new Person("lyy6",6);
+$a6=new Student("lyy6",6);
 
-$a7=new Person("lyy7",7);
+$a7=new Student("lyy7",7);
 
-$a8=new Person("lyy8",8);
+$a8=new Student("lyy8",8);
 
 echo obj(8);
 
