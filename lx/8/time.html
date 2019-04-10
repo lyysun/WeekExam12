@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+距离2019-3-14，<span id="out">
+	            还有<span id='t'></span>天<span id='s'></span>时<span id='f'></span>分<span id='m'></span>秒
+       
+                </span>
+                <input type="hidden" id="nowtime">
+</body>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	 $(function(){
+             
+             //从服务器获取时间
+             $.ajax({
+             	url:"time.php",
+             	type:"get",
+             	dataType:"json",
+             	success:function(e){
+                      
+                      $("#nowtime").val(e.time);
+                       setTimeout(settime,1000);
+             	}
+             })
+       })
+
+			 function settime(){
+
+			 	 // var d=new Date(); //当前时间
+			 	 // var t=d.getTime();//当前毫秒
+		      
+		        var t = $("#nowtime").val();
+		        //结束时间
+		        var str="2019/3/21 14:00:00";
+		        var e = new Date(str);
+		        var et = e.getTime();//结束日期的毫秒数
+		        
+		        var sj = (et-t)/1000;//得到差的秒
+		        //alert(sj);
+		        var d,h,m,s;//定义变量存储
+		        if(sj>0){
+		            d = Math.floor(sj/60/60/24);//天
+		            h = Math.floor(sj/60/60%24);//时
+		            m = Math.floor(sj/60%60);//分
+		            s = Math.floor(sj%60);//秒
+		        }else{
+
+		        	$("#out").html("抢购结束！");
+		        }
+						     $("#t").html(d);
+						     $("#s").html(h);
+						     $("#f").html(m);
+						     $("#m").html(s);
+
+				     var n = parseInt(t)+1000;
+				     $("#nowtime").val(n);
+				      setTimeout(settime,1000);
+			  }
+	
+      
+  
+
+</script>
+</html>
+

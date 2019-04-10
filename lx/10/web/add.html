@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+   <title>Bootstrap 实例 - 水平表单</title>
+   <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br>
+<center>
+	<h3>添加页面</h3> 
+</center>	
+
+<form class="form-horizontal" role="form" id="addform">
+   <div class="form-group">
+      <label for="firstname" class="col-sm-2 control-label">标题</label>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" id="title" name="title" 
+            placeholder="请输入名字">
+      </div>
+   </div>
+   <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">作者</label>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" id="zz" name="zz" 
+            placeholder="请输作者">
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">数量</label>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" id="num" name="num" 
+            placeholder="请输数量">
+      </div>
+   </div>
+   
+   <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">类型</label>
+      <div class="col-sm-10">
+        <select name="news_id" id="news_id" class="form-control" >
+        	<option value="1">娱乐新闻</option>
+        	<option value="2">体育新闻</option>
+        </select>
+      </div>
+   </div>
+    <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">内容</label>
+      <div class="col-sm-10">
+       <textarea class="form-control" rows="3"></textarea>
+      </div>
+   </div>
+   <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+         <button  class="btn btn-error" onclick="add()">添加</button>
+      </div>  
+   </div>
+
+</form>
+
+
+</body>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	function add(){
+		// var data=$("#addfrom").serializeArray();
+        var title=$("#title").val();
+        var num=$("#num").val();
+        var zz=$("#zz").val();
+        var news_id=$("#news_id").val();
+        var nr=$("#nr").val();
+        var arr={
+              "title":title,
+              "nr":nr,
+              "zz":zz,
+              "num":num,
+              "news_id":news_id,
+        };
+
+        $.ajax({
+        	url:"http://127.0.0.1/zhuanx2.5/lx/10/api/user.php",
+        	type:"post",
+        	data:{arr},
+          dataType:"json",
+        	success:function(e){
+        	       if(e.data.code ==200){
+                  alert("添加成功");
+                    location.href="show.html";
+                 }
+              
+        	 
+        	}
+        })
+      
+	}
+</script>
+</html>			

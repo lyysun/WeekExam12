@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="{:url('prize/update')}" method="post">
+		<table>
+		<input type="hidden" name="prize_id" value="<?php echo $data['prize_id']?>">
+			<tr>
+				<td> 奖品名称：<input type="text" name="name" value="<?php echo $data['prize_name']?>"></td>
+			</tr>
+			<tr>
+				<td> 数量：<input type="text" name="num" value="<?php echo $data['num']?>"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="修改"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

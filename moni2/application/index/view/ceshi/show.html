@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+	  <form action="{:url('ceshi/show')}" method="get">
+	  	姓名: <input type="text" name="name">
+	  	性别: <input type="text" name="sex">	
+	  	年龄: <input type="text" name="age">
+	  	<input type="submit" value="搜索">
+	  </form>
+		<tr>
+			<td>姓名</td>
+			<td>性别</td>
+			<td>年龄</td>
+			<td>操作</td>
+		</tr>
+		{volist name="data" id="vo"}
+        <tr class="id{$vo.id}">
+			<td>{$vo.name}</td>
+			<td>{$vo.sex}</td>
+			<td>{$vo.age}</td>
+			<td><a href="javascript:;" onclick="del({$vo.id})">删除</a></td>
+		</tr>
+		{/volist}
+	</table>
+</body>
+<script type="text/javascript" src="/js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	function del(id){
+	    
+	    // alert(id);
+	    $.ajax({
+	    	url:"{:url('ceshi/del')}",
+	    	type:"get",
+	    	data:{id:id},
+	    	dataType:"json",
+	    	success:function(e){
+	    		if(e.code==1){
+	    			$(".id"+id).remove();
+	    		}
+	    	}
+	    })
+	}
+</script>
+</html>

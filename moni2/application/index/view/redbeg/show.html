@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+		用户id：<?php echo $data['user_id']?>
+		姓名：<?php echo $data['name']?>
+		金额:<?php echo $data['m']?>
+	<a href="{:url('redbeg/sendred')}">发红包</a>
+	<table border="1">
+		<tr>
+			<td>红包金额</td>
+			<td>红包份数</td>
+			<td>剩余份数</td>
+		</tr>
+         {volist name="reddata" id="vo"}
+         <tr>
+         	<td> {$vo.zm}</td>
+         	<td> {$vo.num}</td>
+         	<td> {$vo.snum}</td>
+         	<td><button onclick="red({$vo.red_id})">抢红包</button></td>
+         </tr>
+         {/volist}
+	</table>
+</body>
+<script type="text/javascript" src="/js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+
+	function red(red_id){
+		$.ajax({
+			url:"{:url('redbeg/robred')}",
+			type:"get",
+			data:{red_id:red_id},
+			dataType:"json",
+			success:function(e){
+                if(e.code==1){
+                	alert("抢光")
+                }
+                if(e.code==2){
+                	alert("抢过")
+                }
+                if(e.code==3){
+                	alert(e.one_m);
+                	history.go(0);
+                }
+			}
+		})
+	}
+</script>
+
+</html>

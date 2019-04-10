@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+     .pagination li{
+       list-style:none;
+       float:left; 
+     }
+	</style>
+</head>
+<body>
+<center>
+	<h3>展示页</h3>
+	<form action="{:url('dayz3/index')}" method="get">
+		标题：<input type="text" value="{$title}" name="title"><input type="submit" value="搜索">
+	</form>
+  <table width="400px" higth="100px" >
+  	<tr>
+  		<td>id</td>
+  		<td>标题</td>
+  		<td>内容</td>
+  		<td>作者</td>
+  		<td>浏览量</td>
+  		<td>操作</td>
+  	</tr>
+  	{volist name="data" id="vo"}
+  	<tr class="del{$vo.id}">
+  		<td>{$vo.id}</td>
+  		<td><a href="{:url('dayz3/detail',['id'=>$vo.id])}">{$vo.title}</a></td>
+  		<td>{$vo.nr}</td>
+  		<td>{$vo.zz}</td>
+  		<td>{$vo.num}</td>
+  		<td><a href="javascript:;" onclick="del({$vo.id})">删除</a></td>
+  	</tr>
+  	{/volist}
+  </table>
+  {$data->render()}
+</center>
+<script type="text/javascript" src="/index/js/jquery.min.js"></script>
+</body>
+<script type="text/javascript">
+	function del(id){
+          
+		$.ajax({
+			url:"{:url('dayz3/del')}",
+			type:"get",
+			data:{id:id},
+			dataType:"json",
+			success:function(e){
+				console.log(e);
+				if(e.code==1){
+           $(".del"+id).remove();
+                   
+				}
+				
+			}
+		})
+	}
+</script>
+</html>

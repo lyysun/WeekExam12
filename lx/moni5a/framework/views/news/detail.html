@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>标题</td>
+			<td>内容</td>
+			<td>点击量</td>
+		</tr>
+		<?php foreach ($data['list'] as $key => $value) {?>
+		<tr>
+			<td><?php echo $value['title']?></td>
+			<td><?php echo $value['nr']?></td>
+			<td><?php echo $value['num']?></td>
+		</tr>
+		<?php }?>
+	</table>
+</body>
+</html>
