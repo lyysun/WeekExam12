@@ -1,0 +1,37 @@
+<?php 
+ // $json
+$arr=json_decode($json,true);//接受json数据
+// console.log($arr);
+dump($arr);die;
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<table>
+	<tr>
+		<td>id</td>
+		<td>名称</td>
+
+	</tr>
+	{volist name="arr" id="vo"}
+  <tr>
+	<td>{$vo.id}<td>
+	<td>{$vo.name}</td>
+   </tr>
+	{/volist}
+</table>
+<div id="page">
+<?php 
+    for($i=1;$i<=$page;$i++){
+    	echo "<a>$i</a>";
+    }
+?>
+	</div>
+</body>
+</html>

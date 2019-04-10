@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<?php 
+
+	echo $path = "www.abc.com/a.php?id=1".'<br>';
+
+	//  $str=substr($path,4);//截取
+	// echo $str;
+         //替换
+      // $str=str_replace('www.abc.com/a.php?id=1','abc.com',$path);
+      // echo $str
+        $str=substr_replace("www.abc.com/a.php?id=1",'abc.com', $path);
+        echo $str//截取替换
+	?>
+
+</body>
+</html>

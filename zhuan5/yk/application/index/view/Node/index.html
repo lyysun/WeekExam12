@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+
+</head>
+<body>
+<center>
+<table>
+	<?php foreach ($data as $item) {?>
+ 			<tr>
+ 				<td><?php echo $item['nodeDes']?></td>
+ 			</tr>
+ 			<tr>
+ 			<?php foreach ($item['child'] as $son) {?>
+ 				<td>&nbsp&nbsp <a href=""><?php echo $item['nodeDes']?></a> </td>
+ 			<?php }?>
+ 			</tr>
+ 			<tr>
+ 				<td><a href="/index/user/index">添加学生</a></td>
+ 			</tr>
+ 		<?php }?>
+ 		
+ 		</table>
+ 		</center>
+</body>
+</html>

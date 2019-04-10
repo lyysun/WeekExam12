@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SHOP 管理中心 - 添加权限 </title>
+<base href="__PUBLIC__/admin/" />
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>
+<span class="action-span"><a href="{:U('Role/index')}">角色列表</a></span>
+<span class="action-span1"><a href="{:U('Index/index')}">SHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 分配权限【{$role_name}】 </span>
+<div style="clear:both"></div>
+</h1>
+<!-- start add new category form -->
+<div class="main-div">
+  <form action="__URL__/setPrivillage" method="post" name="theForm" enctype="multipart/form-data" >
+	 <table width="100%" id="general-table">
+		<tbody>
+		 
+		 <foreach name="nodelist" item="vo">
+			<tr>
+				<td width="18%" valign="top" class="first-cell">
+				     <input type="checkbox"  class="checkbox" name="node_id[]" value="{$vo.node_id}" <if condition="$vo.curr eq 1">checked</if> > {$vo.title} |
+				</td>
+				    
+				<td>
+				  <foreach name="vo.son" item="v">
+					<div style="width:200px;float:left" >
+					      <input type="checkbox"  class="checkbox" name="node_id[]" value="{$v.node_id}" <if condition="$v.curr eq 1"> checked</if>   >{$v.title}
+					</div>
+					</foreach>
+				</td>
+			</tr>
+
+			</foreach>
+
+			
+			
+			
+			
+      </tbody>
+    </table>
+      <div class="button-div">
+        <input type="submit" value=" 确定 ">
+        <input type="reset" value=" 重置 ">
+      </div>
+    <input type="hidden"  value="{$role_id}" name="role_id">
+  </form>
+</div>
+
+
+</div>
+
+</body>
+</html>

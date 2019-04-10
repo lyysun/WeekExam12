@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td>
+			用户名：<input type="text" name="name" id="name">
+		</td>
+
+	</tr>
+	<tr>
+		<td>密码：<input type="text" name="pwd" id="pwd"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="登陆" id="dl"></td>
+	</tr>
+</table>
+	
+</body>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$('#dl').live("click",function(){
+	    name=  $("#name").val();
+	    pwd=  $("#pwd").val();
+	    $.ajax({
+	    	url:"/index/index/dl",
+	    	type:"get",
+	    	data:{name:name,pwd:pwd},
+	    	success:function(res){
+	    		alert(res);
+                       if(res=='yes'){
+                       	alert("登陆成功");
+                       	location.href="/index/index/show";
+                       }
+	    	}
+	    })
+	})
+</script>
+</html>

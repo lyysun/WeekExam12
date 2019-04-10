@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h2><a href="/index/index/index">返回首页</a></h2>
+<h3>角色展示</h3>
+
+<h4><a href="/index/role/index">添加角色</a></h4>
+<form action="/index/user/userRole" method="post">
+	<table border="1">
+		<tr><td><input type="checkbox"></td>
+			<td>id</td>
+			<td>角色名</td>
+			<td>操作</td>
+		</tr>
+		<?php foreach ($data as $k => $v) {?>
+		<tr>
+		    <td><input type="radio" name="roleId" value="<?php echo $v['id']?>"></td>
+			<td><?php echo $v['id']?></td>
+			<td><?php echo $v['roleName']?></td>
+			<td><a href="/index/role/delete/id/{$v['id']}">删除</a>
+			<a href="/index/role/update/id/{$v['id']}">修改</a>
+			<a href="/index/node/index/id/{$v['id']}">分配权限</a>
+			</td>
+		</tr>
+		<?php }?>
+		<tr>
+			<td>
+			<input type="hidden" name="uid" value="<?php echo !empty($uid)?$uid:0;?>"/>
+				<input type="submit" value="分配角色">
+			</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

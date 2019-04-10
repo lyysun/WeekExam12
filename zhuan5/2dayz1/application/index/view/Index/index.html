@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td>
+		<input type="text" placeholder="admin" name="name" id="name">
+		</td>
+	</tr>
+	<tr>
+		<td><input type="text" placeholder="密码" name="pwd" id="pwd"></td>
+	</tr>
+   <tr><td><span id="y">{:captcha_img()}</span></td></tr>
+	<tr>
+		<td><input type="button" value="登陆" id="dl"></td>
+	</tr>
+</table>
+	<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+
+
+       $('#dl').live('click',function(){
+       	   var name=$('#name').val();
+       	   var pwd=$('#pwd').val();
+       	   // alert(name);
+       	   $.ajax({
+                 url:'/index/index/dl',
+                 type:'POST',
+                 data:{name:name,pwd:pwd},
+                 success:function(msg){
+                   // alert(msg);
+                   if(msg=='Yes'){
+                     alert('登陆成功');
+                    location.href=('/index/index/role');
+                   }else{
+                    alert('登陆失败');
+                   }
+                 }
+
+       	   })
+
+
+
+       })
+	</script>
+</body>
+</html>

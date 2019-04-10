@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+{if:$this->admin==admin}
+<form action="{url:/moni1/ss}" method="post">
+	用户名:<input type="text" name="name"><input type="submit" value="搜索">
+</form>
+<form action="{url:/moni1/excel_do}" method="post" enctype="multipart/form-data">
+	<input type="file" name="file"><input type="submit" value="导入">
+
+</form>
+<a href="{url:/moni1/excel_out}"><button>导出</button></a>
+{/if}
+<table border="1">
+
+
+<tr>
+	<td>用户名</td>
+	<td>真实姓名</td>
+	<td>工资</td>
+</tr>
+	{foreach:items=$res}
+	
+		<tr>
+			<td>{$item['name']}</td>
+			<td>{$item['zname']}</td>
+			<td>{$item['gz']}</td>
+		</tr>
+	
+	{/foreach}
+	</table>
+</body>
+</html>

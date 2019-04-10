@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h4><a href="__URL__/add">添加管理员</a></h4>
+
+<form action="__URL__/index" method="get">
+	时间:<input type="text" name="time">
+	用户名：<input type="text" name="dlm">
+	<input type="submit" value="搜索">
+</form>
+<span>共有数据：{$count}条</span>
+	<table border="1">
+		<tr align="center">
+		<td><input type="checkbox"  onclick="fun1()"></td>
+		<td>id</td>
+		<td>登录名</td>
+		<td>手机</td>
+		<td>邮箱</td>
+		<td>角色</td>
+		<td>加入时间</td>
+		<td>是否起用</td>
+		<td>操作</td>
+		</tr>
+		<volist name="data" id="vo">
+			<tr>
+				<td><input type="checkbox" name="box" value="{$vo.id}"></td>
+				<td>{$vo.id}</td>
+				<td>{$vo.dlm}</td>
+				<td>{$vo.tel}</td>
+				<td>{$vo.mail}</td>
+				<td>{$vo.role}</td>
+				<td>{$vo.time}</td>
+				<td>{$vo.start}</td>
+				<td><a href="__URL__/delete/id/{$vo.id}">删除</a></td>
+			</tr>
+		</volist>
+	</table>
+	<button onclick="fun2()">反选</button>
+</body>
+<script type="text/javascript">
+	function fun1(){//全选全不选
+		var box=document.getElementsByName('box');
+		for(var i=0;i<box.length;i++){
+			box[i].checked=!box[i].checked;
+		}
+	}
+	function fun2(){//反选
+		var box=document.getElementsByName('box');
+		for(var i=0;i<box.length;i++){
+			box[i].checked=!box[i].checked;
+		}
+	}
+</script>
+</html>

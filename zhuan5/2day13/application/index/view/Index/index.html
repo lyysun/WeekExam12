@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <style type="text/css">
+	    .a{
+	    	color:#666666;
+	    	/*text-decoration:underline;*/
+	    	font-size:30px;
+	    	background:#999;
+	    	border-bottom:2px  solid  #d7d7d7;
+
+	    }
+	 </style>
+
+</head>
+<body>
+<div class="div">
+<h4 class="a">列表展示</h4>
+
+<table>
+	姓名<input type="text" name="name">
+	<input type="button" id="ss" value="搜索">
+	<button id="rq">人气</button>
+	<button id="rq">最新</button>
+</table>
+
+<table>
+	<?php foreach ($a as $v) {?>
+		<tr>
+			    <tr><td><img src="/static/2.png" alt="" width="100px" height="100px"></td></tr>
+				<tr><td>单位：<?php echo $v['dw']?></td></tr>
+				<tr><td>姓名：<?php echo $v['name']?></td></tr>
+				<tr><td>作品寓意：<?php echo $v['zp']?></td></tr>
+				<tr><td>总投票：
+				<span class="t<?php echo $v['id']?>"><?php echo $v['tp']?></span>
+				<button class="tp" data="<?php echo $v['id']?>" sta="<?php echo $v['tp'];?>" >投票
+				</button></td></tr>
+			
+		</tr>
+	<?php }?>
+</table>
+</div>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+	<script type="text/javascript"> 
+          $('#ss').live('click',function(){
+          	// alert(1)
+
+          	var name=$("input[name='name']").val();
+          	// alert(name);
+          	$.ajax({
+          		url:"/index/index/index",
+          		type:'post',
+          		data:{name:name},
+          		success:function(res){
+                //ajax单个搜索
+                   $('.div').html(res);
+          		}
+          	})
+          })
+           
+           $('#rq').live('click',function(){
+           	
+           	$.ajax({
+          		url:"/index/index/rq",
+          		type:'get',
+          		
+          		success:function(res){
+              
+                   $('.div').html(res);
+          		}
+          	})
+
+           })
+
+    //投票
+      $('.tp').live('click',function(){
+      	// alert(11);
+      	 id=$(this).attr('data');
+      	 tp=$(this).attr('sta');
+      	 sum=++tp;
+       // alert(sum);
+       // console.log(sum);
+         _this=$(this);
+      	 $.ajax({
+      	 	url:"/index/index/tp",
+      	 	type:'get',
+      	 	data:{id:id,sum:sum},
+      	 	success:function(res){
+                 // alert(res);
+               
+                  _this.attr('sta',sum);
+                   
+                   $(".t"+id).html(sum);
+                 
+      	 	}
+      	 })
+     	
+      })
+	</script>
+</body>
+</html>

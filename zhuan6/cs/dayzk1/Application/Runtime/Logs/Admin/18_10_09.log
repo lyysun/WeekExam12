@@ -1,0 +1,50 @@
+[ 2018-10-09T09:29:14+08:00 ] 127.0.0.1 /zhuan6/cs/dayzk1/index.php/Admin/Brand/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000972s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001961s ]
+SQL: SHOW COLUMNS FROM `tp_brand` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\zhuan6\cs\dayzk1\Application\Admin\Controller\BrandController.class.php 第 11 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_brand` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\zhuan6\cs\dayzk1\Application\Admin\Controller\BrandController.class.php 第 14 行.
+SQL: SELECT * FROM `tp_brand` LIMIT 0,2   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013597s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001972s ]
+
+[ 2018-10-09T09:40:49+08:00 ] 127.0.0.1 /zhuan6/cs/dayzk1/index.php/Admin/Brand/index/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001985s ]
+SQL: SHOW COLUMNS FROM `tp_brand` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\zhuan6\cs\dayzk1\Application\Admin\Controller\BrandController.class.php 第 11 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_brand` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: where D:\phpstudy\PHPTutorial\WWW\zhuan6\cs\dayzk1\Application\Admin\Controller\BrandController.class.php 第 14 行.
+SQL: SELECT * FROM `tp_brand` LIMIT 0,2   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014291s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001303s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001617s ]
+

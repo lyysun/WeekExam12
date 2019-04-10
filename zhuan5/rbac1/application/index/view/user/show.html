@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h2><a href="/index/index/index">返回首页</a></h2>
+<h3>用户展示</h3>
+<h4><a href="/index/user/index">添加用户</a></h4>
+	<table border="1">
+		<tr>
+			<td>id</td>
+			<td>用户名</td>
+			<td>操作</td>
+		</tr>
+		<?php foreach ($data as $k => $v) {?>
+		<tr>
+			<td><?php echo $v['id']?></td>
+			<td><?php echo $v['userName']?></td>
+			<td><a href="/index/user/delete/id/{$v['id']}">删除</a>
+			<a href="/index/user/update/id/{$v['id']}">修改</a>
+			<a href="/index/role/show/id/{$v['id']}">分配角色</a>
+			</td>
+		</tr>
+		<?php }?>
+	</table>
+</body>
+</html>

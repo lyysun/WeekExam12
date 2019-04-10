@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/index/role/add" method="post">
+<table>
+	<tr>
+		<td>角色名称</td>
+		<td><input type="text" name="rolename"></td>
+	</tr>
+     <tr>
+		<td><input type="submit" value="添加角色"></td>
+	</tr>
+	
+	</table>
+	</form>
+	<hr>
+
+    <form action="/index/user/userrole" method="post">
+    	<table>
+    		<tr>
+    			<td>id</td>
+    			<td>角色名称</td>
+    			<td>操作</td>
+    		
+    		</tr>
+    		<?php foreach ($data as $k => $v) {?>
+    		<tr>
+    			<td><?php echo $v['id'];?></td>
+    			<td>
+    			<input type="radio" name="roleId" value="<?php echo $v['id'];?>" 
+    			<?php 
+
+    			if(!empty($uid) && in_array($v['id'],$roleIds)) {
+    				echo "checked";
+    			}
+    			?>
+    			>
+
+    			<?php echo $v['rolename'];?>
+    			</td>
+    			<td>
+    			<a href="/index/role/delete/id/<?php echo $v['id']?>">删除</a>
+    			<a href="/index/role/update/id/<?php echo $v['id']?>">修改</a>
+    			<a href="/index/rolenode/index/roleId/<?php echo $v['id']?>">分配权限</a>
+    			</td>
+    		</tr>
+    		<?php }?>
+    		<tr>
+    			<td><input type="hidden" name="uid" value="<?php echo !empty($uid)?$uid:0;?>">
+    			<input type="submit" value="分配角色"></td>
+    		</tr>
+    	</table>
+    </form>
+
+
+	
+</body>
+</html>
+

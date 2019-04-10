@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<center>
+<h3>{$rolename.name}--分配权限</h3>
+<form action="/index/rbac/addnode" method="get">
+	<table>
+		{volist name="a" id="vo"}
+            <tr>
+            	<td>
+            	<input type="hidden" name="roleid" value="{$rolename.id}">
+            	<input type="checkbox" name="nodeid[]" value="{$vo.id}">
+            	<?php echo str_repeat("&nbsp;&nbsp;&nbsp;&nbsp",$vo['level'])?>{$vo.name}
+            	</td>
+            </tr>
+          
+		{/volist}
+		<td><input type="submit" value="提交"></td>
+	</table>
+	</form>
+	</center>
+</body>
+</html>

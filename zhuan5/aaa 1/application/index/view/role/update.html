@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>修改角色信息</title>
+</head>
+<body bgcolor="#abcdef">
+	<center>
+		<form action="/index/role/doUpdate" method="post">
+			<input type="hidden" name="rid" value="<?php echo $roleInfo['id'];?>"/>
+			<input type="text" name="roleName" value="<?php echo $roleInfo['roleName'];?>"/>
+			<input type="submit"  value="修改用户"/>
+		</form>
+	</center>
+</body>
+</html>

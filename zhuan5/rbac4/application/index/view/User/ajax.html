@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+       ul,li{
+       	list-style: none;;
+       	float: left;;
+       }
+	</style>>
+</head>
+<body>
+<table border="1">
+   <tr><td><input type="checkbox"></td>
+   	 <td>用户名</td>
+   	 <td>密码</td>
+   	 <td>状态</td>
+   </tr>
+   <?php foreach ($data as $k => $v) {?>
+   <tr>
+   <td><input type="checkbox" name="ids" value="<?php echo $v['id']?>"></td>
+   	<td><?php echo $v['userName']?></td>
+   	<td><?php echo $v['password']?></td>
+   	 <td><a href="/index/userrole/index/userId/<?php echo $v['id'];?>">分配角色</a></td>
+   	 <td>
+   	 	<button id="go" data="<?php echo $v['id']?>" status="<?php echo $v['status']?>">
+   	 		<?php echo $v['status']==0?"启用":"未启用";?>
+   	 	</button>
+   	 </td>
+   </tr>
+   <?php }?>
+</table>
+<?php echo $page?>
+	
+</body>
+</html>

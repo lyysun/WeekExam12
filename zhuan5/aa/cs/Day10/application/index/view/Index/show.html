@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- <p>收货地址</p>
+ -->	<table>
+		<tr>
+			<td>收货地址</td>
+		</tr>
+		<?php foreach ($data as $k => $v) {?>
+		<tr>
+			<td><?php echo $v['nr']?></td>
+		</tr>
+		<?php }?>
+	</table>
+</body>
+</html>

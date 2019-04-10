@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>SHOP 管理中心 - 品牌管理 </title>
+<base href="/index/" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>
+<span class="action-span"><a href="{:url('add')}">添加品牌</a></span>
+<span class="action-span1"><a href="index.php?act=main">SHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品品牌 </span>
+<div style="clear:both"></div>
+</h1>
+
+<div class="form-div">
+  <form action="{:url('index')}" name="searchForm">
+    <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH">
+     名称<input type="text" name="brand_name" size="15">
+    描述<input type="text" name="brand_desc" size="15">
+      <input type="submit" value=" 搜索 " class="button">
+  </form>
+</div>
+
+<form method="post" action="" name="listForm">
+<!-- start brand list -->
+<a href="{:url('d')}">导出订单</a>
+<div class="list-div" id="listDiv">
+
+  <table class="box" cellpadding="3" cellspacing="1">
+    <tbody>
+		<tr>
+			<th>品牌名称</th>
+      <th>品牌LOGO</th>
+			<th>品牌网址</th>
+			<th>品牌描述</th>
+			
+			<th>操作</th>
+		</tr>
+    {foreach $brandList as $val}
+        <tr class="trs">
+			<td class="first-cell">
+       <input type="text" class="xg" data="{$val.brand_id}" value="{$val.brand_name}" />
+      </td>
+      
+			
+      <td><img src="/uploads/{$val.brand_logo}" width="16" height="16" border="0" alt="品牌LOGO"></a></td>
+			<td>{$val.site_url}</td>
+			<td align="left" >{$val.brand_desc}</td>
+			
+			<td align="center">
+				编辑 |  
+        <button class="del" data="{$val.brand_id}">移除</button>
+      </td>
+			
+		</tr>
+    {/foreach}
+		<!--start，这些都是显示代码，没有格式化，开发时会删除 -->
+  
+	<!--end，这些都是显示代码，没有格式化，开发时会删除 -->
+   
+	
+   
+  </tbody></table>
+
+      <div class="page">{$page}</div>
+<!-- end brand list -->
+</div>
+</form>
+
+
+<div id="footer">
+	版权所有 &copy; 2006-2013 软工教育 - 高级PHP - </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+  $(function(){
+    //分页
+      // $(document).on('click',".page ul li a",function(){
+      //            url=$(this).attr('href');
+      //            brand_name=$("[name='brand_name']").val();
+      //            str='';
+      //            $.get(url,{'brand_name',brand_name},function(msg){
+      //                  $(".trs").empty();
+      //                 $.each(msg.data,function(k,val){
+      //                   str+='<tr class="trs"><td class="first-cell">'+val.brand_name+'</td><td><img src="/uploads/'+val.brand_logo+'" width="16" height="16" border="0" alt="品牌LOGO"></a></td><td>'+val.site_url+'</td><td align="left" >'+val.brand_desc+'</td><td align="center">编辑|移除</td></tr>';}) 
+      //                 // alert(str);
+      //                 $(".box").append(str);
+      //                $('.page').html(msg.page);
+      //            })
+      //       return false;
+      // })
+        //修改
+      $(document).on('blur',".xg",function(){
+      // $(".xg").live('blur',function(){
+        // alert(1)
+         brand_id=$(this).attr('data');
+         brand_name=$(this).attr('value');
+         // alert(brand_name)
+         $.ajax({
+          url:"/index/index/xg",
+          type:"get",
+          data:{brand_id:brand_id,brand_name:brand_name},
+          success:function(res){
+         alert(res)
+          }
+         })
+      })
+
+    $(document).on('click',".del",function(){
+      // alert(1)
+           brand_id=$(this).attr('data');
+           // alert(brand_id)
+           _this=$(this);
+           $.ajax({
+                   url:'/index/index/del',
+                   type:'get',
+                   data:{brand_id:brand_id},
+                   success:function(res){
+                          if(res==1){
+                             _this.parent().parent().remove();
+                          }
+                   }
+           })
+      })
+
+    
+
+  })
+</script>
+</body>
+</html>

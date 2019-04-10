@@ -1,0 +1,30 @@
+<form action="index/index/index" method="get">
+	用户名<input type="text" name="bt">
+	<input type="submit" value="搜索">
+</form>
+<table border="1">
+	<tr>
+	<td><input type="checkbox"></td>
+		<td>id</td>
+		<td>文章表态</td>
+		<td>所属分类</td>
+		<td>发布状态</td>
+		<td>发布人</td>
+		<td>添加时间</td>
+	</tr>
+<?php foreach ($data as $k => $v) {?>
+	<tr>
+	<td><input type="checkbox" name="box" value="<?php echo $v['id']?>"></td>
+		<td><?php echo $v['id']?></td>
+		<td><a href="__URL__/show"><?php echo $v['bt']?></a></td>
+		<td><?php echo $v['fl']?></td>
+		<td><?php echo $v['sta']?></td>
+		<td><?php echo $v['fbr']?></td>
+		<td><?php echo $v['time']?></td>
+	</tr>
+<?php }?>
+</table>
+<button onclick="fun()">全选</button>
+<button onclick="fun1()">反选</button>
+<button onclick="delall()">删除</button>
+<?php echo $page;?>	

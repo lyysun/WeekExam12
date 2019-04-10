@@ -1,0 +1,6 @@
+[ 2018-09-30T19:58:54+08:00 ] 127.0.0.1 /zhuan6/lx/day1/Public/Admin/i/zhuan6/lx/day1/index.php/Admin/Index/drag.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000667s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001302s ]
+ERR: 无法加载模块:Public
+

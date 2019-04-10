@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<center>
+<table>
+	<tr>
+		<td>用户名：</td>
+		<td><input type="text" name="name" id="name"></td>
+	</tr>
+	<tr>
+		<td>密码：</td>
+		<td><input type="text" name="pwd" id="pwd"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="button" value="登陆" id="dl"></td>
+	</tr>
+
+</table>
+</center>
+	<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+        $("#dl").live("click",function(){
+        	// alert(1)
+        	name=$("#name").val();
+        	// alert(name);
+        	pwd=$("#pwd").val();
+        	$.ajax({
+        		url:"/index/login/yz",
+        		type:"post",
+        		data:{name:name,pwd:pwd},
+        		success:function(res){
+        			json=JSON.parse(res);
+                       if(json.code=="1"){
+                       	alert("登陆成功");
+                          location.href="/index/index/index";
+                       }
+        		}
+        	})
+        })
+	</script>
+</body>
+</html>

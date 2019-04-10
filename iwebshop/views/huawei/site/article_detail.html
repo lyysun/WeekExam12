@@ -1,0 +1,89 @@
+<div class="bigweb">
+<section class="breadcrumb">
+	<span>您当前的位置：</span> <a href="{url:}">首页</a> > <a href="{url:/site/article}">资讯列表</a> > {$this->articleRow['title']}
+</section>
+
+
+<section class="web">
+	<section class="article_main">
+		<section class="article article_infor">
+			<header>
+				<h1 class="article_title">{$this->articleRow['title']}</h1>
+				<time class="article_date">发布日期：{$this->articleRow['create_time']}</time>
+			</header>
+			<article class="article_content">{$this->articleRow['content']}</article>
+		</section>
+		{if:!empty($this->relationList)}
+		<section class="artice_goods">
+			<h3>相关商品</h3>
+			<ul>
+				{foreach:items = $this->relationList}
+				<li>
+					<a href="{url:/site/products/id/$item['goods_id']}">
+						<img src="{url:/pic/thumb/img/$item[img]/w/200/h/200}" alt="{$item['name']}">
+						<strong>{$item['name']}</strong>
+						<em>￥{$item['sell_price']}</em>
+					</a>
+				</li>
+				{/foreach}
+			</ul>
+		</section>
+		{/if}
+	</section>
+	<!-- 文章详情侧边 -->
+	<aside class="article_bar">
+		<!-- 资讯分类 -->
+		<nav class="news_article_box">
+			<h3 class="news_article_box_head">资讯分类</h3>
+			<ul class="news_article_infor">
+				{foreach:items=Api::run('getArticleCategoryList',10)}
+				<li><a title="{$item['name']}" href="{url:/site/article/id/$item[id]}">{$item['name']}</a></li>
+				{/foreach}
+			</ul>
+		</nav>
+		<!-- 资讯分类 -->
+	</aside>
+	<!-- 文章详情侧边 -->
+</section>
+</div>
+<div class="comment_list box">
+	{set:$where="c.aid=".$this->articleRow['id'];}
+	{set:$page= (isset($_GET['page'])&&(intval($_GET['page'])>0))?intval($_GET['page']):1;}
+	{query: name=article_comment as c join=left join user as a on c.uid eq a.id fields=c.id,c.content,FROM_UNIXTIME(c.create_time) as create_time,a.username,c.recomment_time,FROM_UNIXTIME(c.recomment_time) as reply_time,c.recontents page=$page pagesize=3 where=$where order = c.id desc}
+	<div class="item">
+		<div class="user">
+			<div class="ico"><img src="{webroot:<%=head_ico%>}" width="70px" height="70px" onerror="this.src='/views/huawei/skin/default/image/user_ico.gif'" />
+			
+			</div>
+				<span class="blue">{$item['username']}</span>
+		</div>
+		<dl class="desc gray">
+			<p>
+			   <!--  <img src="{skin:images/front/comm.gif}" width="16px" height="17px" /> -->
+			    <b>评论内容：</b><span class="f_r">{$item['create_time']}</span>
+			</p>
+			<p class="indent">{$item['content']}</p>
+			{if:$item['recomment_time']>0}
+			    <hr />
+			    <p class="bg_gray"><img src="{skin:images/front/answer.gif}" width="16px" height="17px" />
+					<b class="orange">回复：</b>
+					<span class="f_r">{$item['reply_time']}</span></p>
+			    <p class="indent bg_gray">{$item['recontents']}</p>
+			{/if}
+		</dl>
+	</div>
+	{/query}
+	{$query->getPageBar()}
+</div>
+
+<div class="wrap_box">
+	<form method="post" action="{url:/site/article_comment_add}">
+		<input type="hidden" name="aid" value="{$this->articleRow['id']}" />
+		<table class="form_table f_l">
+			<tr>
+			<th>评论内容：</th><td valign="top"><textarea name="content" id="content"></textarea></td>
+			</tr>
+			<tr><td></td><td><label class="btn"><input type="submit" value="评论" /></label></td></tr>
+		</table>
+	</form>
+</div>

@@ -1,0 +1,34 @@
+<?php 
+$arr=json_decode($json,true);
+// dump($arr);die;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<center>
+	<table border="1">
+		<tr>
+			<td>行号</td>
+			<td>考生姓名</td>
+			<td>考生编号</td>
+			<td>班级</td>
+			<td>考试类型</td>
+		</tr>
+		{volist name="arr['data']" id="vo"}
+		<tr>
+			<td><input type="checkbox" name="ids" value="{$vo.id}">{$vo.id}</td>
+			<td><input type="text" id="xg" data="{$vo.id}" value="{$vo.name}"></td>
+			<td>{$vo.bh}</td>
+			<td>{$vo.bj}</td>
+			<td>{$vo.lx}</td>
+		</tr>
+		{/volist}
+	</table>
+	{$page}
+	</center>
+</body>
+</html>

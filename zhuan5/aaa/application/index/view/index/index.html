@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RBAC首页</title>
+	<style type="text/css">
+		center{
+			margin:15px;
+		}
+		a{
+			padding:30px;
+		}
+		ul > li {
+			list-style: none;
+			padding:100px;
+			float:left;
+		}
+		.wenzi{
+			font:28px solid blue;
+			color:blue;
+		}
+		.shuzi{
+			font-size: 50px;
+			color:red;
+		}
+		#footer{
+			position:fixed;
+			bottom: 50px;
+			left:380px;
+		}
+	</style>
+</head>
+<body bgcolor="#abcdef">
+	<center>
+		<h2>RBAC基于角色访问的权限控制</h2>
+		<a href="/index/user/index">用户管理</a>
+		<a href="/index/role/index">角色管理</a>
+		<a href="/index/node/index">权限管理</a>
+		<hr/>
+		<ul>
+			<li><span class="wenzi">用户总数</span>:<span class="shuzi"><?php echo $userCount;?></span></li>
+			<li><span class="wenzi">角色总数</span>:<span class="shuzi"><?php echo $roleCount;?></span></li>
+			<li><span class="wenzi">权限总数</span>:<span class="shuzi"><?php echo $nodeCount;?></span></li>
+		</ul>
+	</center>
+	<div id="footer">
+		<span>Copyright 2018-08-11 上海软工学院1607phpD@author：liyanjun 版权所有</span>
+	</div>
+</body>
+</html>

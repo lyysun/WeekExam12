@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h3>{$rolename.name}...分配权限</h3>
+ <form action="/index/rbac/addnode" method="get">
+	<table>
+		{volist name="data" id="vo"}
+		<tr>
+		<input type="hidden" name="roleid" value="{$rolename.id}">
+			<td><input type="checkbox" name="nodeid[]" value="{$vo.id}">{$vo.name}</td>
+		</tr>
+		{/volist}
+		<tr>
+			<td><input type="submit" value="分配权限"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

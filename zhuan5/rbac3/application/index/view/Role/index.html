@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/index/role/add" method="post">
+		<table>
+			<tr>
+				<td>角色名称</td>
+				<td><input type="text" name="roleName"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="提交"> </td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+	<table border="1">
+		<tr>
+		<td>id</td>
+			<td>角色名称</td>
+			<td>操作</td>
+		</tr>
+		<?php foreach ($data as $k=> $role) {?>
+			<tr>
+				<td><?php echo $role['id']?></td>
+				<td><?php echo $role['roleName']?></td>
+				<td>
+					<a href="/index/role/delete/id/<?php echo $role['id']?>">删除</a>
+					<a href="/index/role/update/id/<?php echo $role['id']?>">修改</a>
+					<a href="/index/Rolenode/index/roleId/<?php echo $role['id']?>">分配权限</a>
+				</td>
+			</tr>
+		<?php }?>
+	</table>
+</body>
+</html>

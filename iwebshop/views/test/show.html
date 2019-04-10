@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table>
+{foreach:items=$res}
+<tr>
+	<td>{$item['name']}</td>
+	<td>{$item['pwd']} </td>
+
+	<td><a href="{url:/test/up_show?id=$item['id']}">修改</a></td>
+	<td><a href="{url:/test/del?id=$item['id']}">删除</a></td>
+</tr>
+{/foreach}
+	</table>
+</body>
+</html>

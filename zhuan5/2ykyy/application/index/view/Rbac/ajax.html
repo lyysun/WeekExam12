@@ -1,0 +1,37 @@
+<?php 
+$arr=json_decode($json,true);
+?>
+<center>
+	<table border="1">
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>位置</td>
+
+			<td>房源</td>
+			<td>房源面积</td>
+		
+			<td>机组面积</td>
+			<td>户型</td>
+			<td>建筑结构</td>
+			<td>租借性质</td>
+			<td>状态</td>
+			 <td>操作</td>
+		</tr>
+		{volist name="arr['data']" id="vo"}
+		<tr>
+		<td><input type="checkbox"></td>
+			<td>{$vo.wz}</td>
+			<td><input type="text" id="xg" data="{$vo.id}" value="{$vo.fy}"></td>
+			<td>{$vo.mj}</td>
+		    <td>{$vo.jmj}</td>
+		    <td>{$vo.fx}</td>
+		    <td>{$vo.jz}</td>
+		    <td>{$vo.xz}</td>
+		    <td>{$vo.zt}</td>
+		    <td><a href="javascript:void(0);" id="del" data="{$vo.id}">删除</a></td>
+
+		</tr>
+		{/volist}
+	</table>
+	{$page}
+	</center>

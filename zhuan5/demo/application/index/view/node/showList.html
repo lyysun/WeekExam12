@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>权限列表</title>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+		}
+		div{
+			display:none;
+			width:300px;
+			height:180px;
+			padding:30px;
+			background:#ccc;
+			position: absolute;
+			top:100px;
+			left:300px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<a href="/index/node/index">添加操作</a>
+		
+		<form action="/index/role/addRoleNode" method="post">
+		<table  width="1000px">
+		<?php foreach($nodes as $parent){?>
+			<tr>
+				<th colspan='2' align="left"><?php echo $parent['nodeDes'].'ID：'.$parent['id'];?></th>
+				<!-- <th><a href="/index/node/index">添加操作</a></th> -->	
+			</tr>	
+		
+			<tr>
+			<?php foreach($parent['item'] as $item){?>
+			
+				<td>
+				<input type="checkbox" name="nodeIds[]" value="<?php echo $item['id'];?>"/>
+				<?php echo $item['nodeDes'];?>
+				<a href="">X</a>
+				<a href="javascript:;" id="update" nodeId="<?php echo $item['id']?>" nodeDes="<?php echo $item['nodeDes']?>">修改</a>
+				</td>
+			<?php }?>
+			
+			</tr>
+		<?php }?>
+			<tr>
+				<td colspan="3">
+					<input type="hidden" name="roleId" value="<?php echo $roleId;?>"/>
+					<input type="submit" value="分配权限"/>
+				</td>
+			</tr>
+			
+			
+		</table>
+		</form>
+	</center>
+	<div id="tan">
+		<form action="/index/node/update" method="post">
+			<input type="hidden" name="nodeId" id="nodeId"/>
+			权限名称<input type="nodeDes" name="nodeDes" id="nodeDes"/>
+			<input type="submit" value="修改	">
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript">
+	$('#update').live('click',function(){
+		$('#tan').show();
+		alert($(this).attr('nodeId'));
+		alert($(this).attr('nodeDes'));
+	})
+</script>
+</html>

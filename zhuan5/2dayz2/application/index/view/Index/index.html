@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h4>员工信息表</h4>
+<form action="/index/index/index" method="get" onsubmit="return false;">
+<table>
+	<tr>
+		<td>名称</td>
+		<td><input type="text" name="name"></td>
+		<td><input type="button" id="ss" value="搜索"></td>
+	</tr>
+</table>
+</form>
+<table border="1">
+	<tr>
+		<td>编号</td>
+		<td>员工姓名</td>
+		<td>所在部门</td>
+		<td>联系方式</td>
+		<td>员工性别</td>
+		<td>薪资等级</td>
+		<td>添加时间</td>
+		<td>操作</td>
+	</tr>
+	{volist name="data" id="vo"}
+	<tr>
+		<td>{$vo.s_id}</td>
+		<td><input type="text" id="xg" data="{$vo.s_id}" value="{$vo.s_name}"></td>
+		
+		<td>{$vo.sd_id}</td>
+		<td>{$vo.s_tel}</td>
+		<td>{$vo.s_sex}</td>
+		<td>{$vo.s_salary}</td>
+		<td><?php echo (date('Y-m-d H:i:s',time()))?></td>
+		<td><a href="javascript:void(0);" id="del" data="{$vo.s_id}">删除</a></td>
+	</tr>
+	{/volist}
+</table>
+	<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+        function request (){
+        	$('#xg').live('blur',function(){
+        		// alert(111);
+        		var id=$(this).attr('data');
+        		// alert(id);
+        		var name=$(this).attr('value');
+        		// alert(name);
+        		$.ajax({
+        			url:"/index/index/xg",
+        			type:"get",
+        			data:{id:id,name:name},
+        			success:function(res){
+                         // request(1);
+                        if(res=='false'){
+                        	alert('修改成功');
+                        }
+        			}
+        		})
+        	})
+        }
+        request(1);
+
+        $(function(){
+        	$('#del').live('click',function(){
+        		var id=$(this).attr('data');
+        		// alert(id);
+        		var _this=$(this);
+        		$.ajax({
+        			url:"/index/index/del",
+        			type:'get',
+        			data:{id:id},
+        			success:function(res){
+                      if(res=='false'){
+                        	_this.parent().parent().remove();
+                        }
+        			}
+        		})
+        	})
+
+        	$('#ss').live('click',function(){
+        		// alert(11);
+        		var name=$("input[name='name']").val();
+        		// alert(name);
+        		
+        	})
+           
+
+
+        })
+	</script>
+</body>
+</html>

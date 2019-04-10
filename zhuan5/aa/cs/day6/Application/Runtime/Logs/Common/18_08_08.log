@@ -1,0 +1,42 @@
+[ 2018-08-08T08:45:23+08:00 ] 127.0.0.1 /aa/cs/index.php/index/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001017s ]
+ERR: 无法加载模块:Index
+
+[ 2018-08-08T08:45:30+08:00 ] 127.0.0.1 /aa/cs/index.php/Index/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+ERR: 无法加载模块:Index
+
+[ 2018-08-08T08:45:34+08:00 ] 127.0.0.1 /aa/cs/index.php/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001402s ]
+ERR: 无法加载模块:Index
+
+[ 2018-08-08T20:37:46+08:00 ] 127.0.0.1 /aa/cs/index/insert?hx=12&xzq=12&ajax=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+ERR: 无法加载模块:Index
+
+[ 2018-08-08T20:38:21+08:00 ] 127.0.0.1 /aa/cs/index/insert?hx=12&xzq=12&ajax=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
+ERR: 无法加载模块:Index
+
+[ 2018-08-08T20:38:22+08:00 ] 127.0.0.1 /aa/cs/index/insert?hx=12&xzq=12&ajax=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+ERR: 无法加载模块:Index
+
+[ 2018-08-08T20:38:24+08:00 ] 127.0.0.1 /aa/cs/index/insert?hx=12&xzq=12&ajax=12
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+ERR: 无法加载模块:Index
+

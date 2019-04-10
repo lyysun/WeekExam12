@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>中奖名单主列表展示</h3>
+	<table>
+		<tr>
+			<td>id</td>
+			<td>用户名</td>
+			<td>奖品名称</td>
+			<td>数量</td>
+			
+		</tr>
+		<?php foreach ($data as $key => $value) {?>
+			<tr>
+				<td><?php echo $value['id']?></td>
+				<td><?php echo $value['name']?></td>
+				<td><?php echo $value['prize_name']?></td>
+				<td><?php echo $value['prize_num']?></td>
+                <td><a href="#" onclick="del(<?php echo $value['id']?>)">删除</a></td>
+			</tr>
+		<?php }?>
+	</table>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+	function del(id){
+		$.ajax({
+			url:"{:url('index/listdel')}",
+			type:"get",
+			data:{id:id},
+			dataType:"json",
+			success:function(e){
+		         if(e.code==1){
+		         	history.go(0);
+		         }
+			}
+		})
+	}
+</script>
+</html>

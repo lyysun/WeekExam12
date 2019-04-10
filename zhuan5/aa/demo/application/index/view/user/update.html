@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>修改用户信息</title>
+</head>
+<body>
+	<center>
+		<form action="/index/user/doupdate" method="post">
+			<input type="hidden" name="uid" value="<?php echo $userInfo['id'];?>">
+			用户名:<input type="text" name="userName" value="<?php echo $userInfo['userName'];?>">
+			<input type="submit" value="修改用户名称">
+		</form>
+	</center>
+</body>
+</html>

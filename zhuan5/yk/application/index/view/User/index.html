@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+</head>
+<body>
+    <center>
+    <form action="/index/user/add" method="post">
+    	<table>
+    		<tr>
+    			<td>学生名称</td>
+    			<td><input type="text" name="name"></td>
+    		</tr>
+    		<tr>
+    			<td>学生性别</td>
+    			<td>
+    			<input type="radio" name="sex" value="男">男
+    			<input type="radio" name="sex" value="女">女
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>班级</td>
+    			<td>
+    				<select name="bj" id="">
+    					<option value="1507phpa">1507phpa</option>
+    					<option value="1405phpc">1405phpc</option>
+    					<option value="15011phd">1511phpd</option>
+    					<option value="1509phpd">1405phpd</option>
+    				</select>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>学号</td>
+    			<td><input type="text" name="xh"></td>
+    		</tr>
+    		<tr>
+    			<td><input type="submit" value="保存">
+    			<input type="reset" value="取消"></td>
+    		</tr>
+    	</table>
+    </form>
+    <hr>
+   <div id="content"></div>
+
+	</center>
+</body>
+<script src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    function request(page,name=''){
+         // alert(11);
+         $.ajax({
+            url:'/index/user/ajax',
+            type:'GET',
+            data:{page:page,name:name},
+            success:function(html){
+                $('#content').html(html);
+                $('ul>li>a').attr('href','javascript:;');
+                $('ul>li>a').click(function(){
+                   
+                    p=$(this).html();
+                    request(p,name);
+                })
+            }
+         })
+    }
+    request(1);
+
+    
+      $('.del').live('click',function(){
+           id=$(this).attr('data');
+           // alert(id);
+           $.ajax({
+            url:'/index/user/del',
+            type:'POST',
+            data:{id:id},
+            success:function(res){
+                 
+                   request(1);
+                 }
+              
+           })
+      })
+
+
+      $('.delall').live('click',function(){
+           // alert(11);
+           var ids=[];
+           $("tr>td>input").each(function(){
+              chek=$(this).attr('checked');
+             if(chek){
+                id=$(this).val();
+                ids.push(id);
+             }
+           })
+           // alert(ids);
+            $.ajax({
+                url:'/index/user/delall',
+                type:'POST',
+                data:{ids:ids},
+                success:function(res){
+                     
+                       request(1);
+                     }
+                  
+           })
+
+      })
+       //全选
+      $('.fun').live('click',function(){
+          var box=document.getElementsByName('ids');
+          for( var i=0;i<box.length;i++){
+            box[i].checked=true;
+          }
+      })
+      //全不选
+      $('.fun2').live('click',function(){
+          var box=document.getElementsByName('ids');
+          for( var i=0;i<box.length;i++){
+            box[i].checked=false;
+          }
+      })
+      //搜索
+      $('.ss').live('click',function(){
+         var name=$(".name").val();
+         var bj=$(".bj").val();
+         // alert(name);
+         request(1,name,bj);
+
+
+      })
+
+      $('.go').live('click',function(){
+        var id=$(this).attr('data');
+        // alert(id);
+        var status=$(this).attr('ststus');
+        // alert(status);
+            if(status!=undefined){
+                status=1;
+            }else{
+                status=0;
+            }
+            $.ajax({
+                url:'/index/user/statu',
+                type:'GET',
+                data:{id:id,status:status},
+                success:function(res){
+                    // alert(res);
+                    request(1);
+                }
+            })
+      })
+  
+</script>
+</html>

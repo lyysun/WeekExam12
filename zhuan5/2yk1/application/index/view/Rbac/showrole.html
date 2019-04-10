@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h3>角色展示</h3>
+<table>
+	{volist name="data" id="vo"}
+	<tr>
+		<td>{$vo.name}</td>
+		<td><a href="/index/rbac/shownode/id/{$vo.id}">分配权限</a></td>
+	</tr>
+	{/volist}
+</table>
+	
+</body>
+</html>

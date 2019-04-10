@@ -1,0 +1,34 @@
+<ERROR_BLOCK>
+excepInfo: INSERT INTO iwebshop_dayz1 ( `name`,`pwd`,`tel`,`addr` ) VALUES ( '李园园','123456','11111111','河北省成安县' ) 
+ -- Table 'iweb.iwebshop_dayz1' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-03 09:11:44
+#0 IWEB_PATH/lib/web/model/model_class.php(128): IDB->query(INSERT INTO iwebshop_dayz1 ( `name`,`pwd`,`tel`,`addr` ) VALUES ( '李园园','123456','11111111','河北省成安县' ) )
+#1 IWEB_PATH/controllers/dayz1.php(35): IModel->add()
+#2 : DAYZ1->add_do()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(add_do)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: INSERT INTO iwebshop_dayz1 ( `name`,`pwd`,`addr`,`tel` ) VALUES ( '李园园','123456','河北省成安县','11111111' ) 
+ -- Table 'iweb.iwebshop_dayz1' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-03 09:12:26
+#0 IWEB_PATH/lib/web/model/model_class.php(128): IDB->query(INSERT INTO iwebshop_dayz1 ( `name`,`pwd`,`addr`,`tel` ) VALUES ( '李园园','123456','河北省成安县','11111111' ) )
+#1 IWEB_PATH/controllers/dayz1.php(36): IModel->add()
+#2 : DAYZ1->add_do()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(add_do)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

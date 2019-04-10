@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="__URL__/add" method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>图片</td>
+				<td><input type="file" name="images"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="提交"></td>
+			</tr>
+		</table>
+	</form>
+	<table>
+		<tr>
+			<td>图片</td>
+		</tr>
+		<volist name="data" id="vo">
+			<tr>
+				<td><img src="__PUBLIC__/{$vo.images}"  width="100" height="100" alt=""></td>
+			</tr>
+		</volist>
+	</table>
+</body>
+</html>

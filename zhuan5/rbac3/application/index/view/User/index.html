@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户列表</title>
+	<style type="text/css">
+	ul,li{
+	  list-style:none;
+    /*  list-style: */
+    float: left;
+	}
+	</style>
+</head>
+<body>
+	<center>
+		<form action="/index/user/add" method="post">
+			<table>
+				<tr>
+					<td>用户名</td>
+					<td><input type="text" name="userName"></td>
+				</tr>
+				<tr>
+					<td>密码</td>
+					<td><input type="text" name="password"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="提交"></td>
+				</tr>
+			</table>
+		</form>
+<hr>
+ 
+ <form action="/index/user/index/" method="post" onsubmit="return false;">
+	 用户名称：<input type="text" name="uname">
+	 <input type="button" value="搜索" id="ss">
+ </form>
+ 
+   <div id="content"></div>
+ 
+		
+		
+	</center>
+	<script type="text/javascript" src="/static/js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+       
+		function request(page,name=''){
+				$.ajax({
+	       		// alert(11);
+	       		url:'/index/user/ajax',
+	       		type:'GET',
+	       		data:{page:page,uname:name},
+	       		success:function(html){
+	       			$('#content').html(html);
+	       			$('ul>li>a').attr('href','javascript:;');
+
+	       			$('ul>li>a').click(function(){
+	       				var uname=$("input[name='uname']").val();
+	       				var p=$(this).html();
+	       				request(p,uname);
+	       			})
+	       		}
+	       	})
+		}
+
+		request(1);
+		$(function(){
+
+			$("#ss").click(function(){
+			//搜索
+				var uname=$("input[name='uname']").val();
+				request(1,uname);
+			})
+            //反选全不选
+            $("#zong").live('click',function(){
+            	var box=document.getElementsByName('box');
+            	for(var i=0;i<box.length;i++){
+            		box[i].checked=!box[i].checked;
+            	}
+
+            })
+               //反选
+             $("#fun").live('click',function(){
+            	var box=document.getElementsByName('box');
+            	for(var i=0;i<box.length;i++){
+            		box[i].checked=!box[i].checked;
+            	}
+
+            })
+
+             //批删
+             $('#delall').live('click',function(){
+             	// alert(11);
+             	var ids=[];
+             	$('tr>td>input').each(function(){
+             		var chek=$(this).attr('checked');
+             		if(chek!=undefined){
+             			id=$(this).val();
+             			ids.push(id);
+             		}
+             	})
+             	// alert(ids);
+             	$.ajax({
+             		url:'/index/user/delall',
+             		type:'POST',
+             		data:{ids:ids},
+             		success:function(res){
+             			// alert(res);
+                      	$('table tr td input').each(function(i,v){
+                      	var chk=$(v).attr('checked');
+                       // alert(chk);
+                      	if(chk){
+                      		$(v).parent().parent().remove();
+                      	}
+                      	
+                      })
+             		}
+             	})
+             })
+            
+
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<div class="headbar">
+	<div class="position"><span>文章</span><span>></span><span>查看评论</span></div>
+	<div class="operating">
+		<a href="{url:/plugins/system_comment_list}"><button class="operating_btn" type="button"><span class="return">返回</span></button></a>
+	</div>
+</div>
+<div class="content_box">
+	<div class="content form_content">
+		<form action="{url:/plugins/system_comment_update}" method="post" name="comment_edit">
+			<input type="hidden" value="{$comment['id']}" name="id" />
+			<table class="form_table">
+				<colgroup>
+					<col width="150px" />
+					<col />
+				</colgroup>
+
+				<tr>
+					<th>评论人：</th>
+					<td>{$comment['username']}</td>
+				</tr>
+				<tr>
+					<th>评论时间：</th><td>{$comment['create_time']}</td>
+				</tr>
+				<tr>
+					<th>评论文章：</th><td>{$comment['title']}</td>
+				</tr>
+				<tr>
+					<th>评论内容：</th><td>{$comment['content']}</td>
+				</tr>
+
+				<tr>
+					<th>回复评论：</th>
+					<td><textarea class='normal' name='recontents'>{$comment['recontents']}</textarea></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td>
+						<button type='submit' class='submit'><span>确定</span></button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>

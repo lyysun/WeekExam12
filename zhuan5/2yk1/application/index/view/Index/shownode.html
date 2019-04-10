@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<h3>{$name}</h3>
+	<table>
+		{volist name="a" id="vo"}
+         <tr>
+         	<td>
+         	<?php echo str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",$vo['level'])?>
+         	<a href="/index/{$vo.url}">{$vo.name}</a>
+         	</td>
+         </tr>
+		{/volist}
+	</table>
+</body>
+</html>

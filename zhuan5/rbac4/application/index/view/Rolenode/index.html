@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table>
+ <?php foreach ($data as $node) {?>
+	<tr><td><input type="checkbox" name="nodePids[]" value="<?php echo $node['id']?>"></td>
+		<td><?php echo $node['nodeDes'];?></td>
+
+	 </tr>
+	 <tr>
+	<?php foreach ($node['child'] as $son) {?>
+	  <td><input type="checkbox" name="nodeIds[]" value="<?php echo $son['id']?>"></td>
+	<td><?php echo $son['nodeDes']?></td>
+		
+	<?php }?>
+	</tr>
+<?php }?>
+</table>
+	
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+     <form action="/index/user/ajax" method="post" onsubmit="return false;">
+       	用户名<input type="text" name="name">
+       	<input type="button" value="搜索" id="ss">
+      </form>
+      <div id="content"></div>
+      <button id="delall">批删</button>
+	
+</body>
+<script src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	function request (page,name='') {        
+		 $.ajax({
+		 	url:"/index/user/ajax",
+		 	type:'GET',
+		 	data:{page:page,name:name},
+		 	success:function(html){
+                $("#content").html(html);
+                $('ul>li>a').attr('href','javascript:;');
+                $('ul>li>a').live('click',function(){
+                	var name=$("input[name='name']").val();
+                	p=$(this).html();
+                  // alert(p);
+                	request(p,name);
+                })
+		  	}
+		 })
+	}
+	request(1);
+
+	$(function(){
+		  $("#ss").click(function(){
+		  	var name=$("input[name='name']").val();
+		  	request(1,name);
+		  })
+
+		 $("#go").live('click',function(){
+		 	var id=$(this).attr('data');
+		 	var status=$(this).attr('status');
+		 	// alert(id);
+		 	if(status==0){
+		 		status=1;
+		 	}else{
+		 		status=0;
+		 	}
+
+		 	$.ajax({
+		 		url:"/index/user/statu",
+		 		type:'POST',
+		 		data:{id:id,status:status},
+		 		success:function(msg){
+                    request(1);
+		 		}
+		 	})
+		 })
+        //批删
+        $("#delall").click(function(){
+              var ids=[];
+              $("tr>td>input").each(function(){
+              	chck=$(this).attr('checked');
+              	if(chck!=undefined){
+              		id=$(this).val(); 
+              		ids.push(id);
+              	}
+              })
+              // alert(ids);
+              $.ajax({
+              	url:"/index/user/delall",
+              	 type:"POST",
+              	 data:{ids:ids},
+              	 success:function(res){
+                     
+                  $("table tr td input").each(function(i,v){
+                  	chk=$(this).attr("checked");
+                  	if(chk){
+                  		$(v).parent().parent().remove();
+                  	}
+                  })
+              	 }
+              })
+        })
+
+	})
+
+</script>
+</html>

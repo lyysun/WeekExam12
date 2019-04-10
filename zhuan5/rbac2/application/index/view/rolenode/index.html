@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/index/rolenode/add" method="post">
+		<table>
+		<input type="hidden" name="roleId" value="<?php echo $roleId;?>">
+			<?php foreach ($data as $node) {
+				$str=isset($node['id'],$nodeIds)?"checked":'';
+				?>
+				<tr><td><input type="checkbox" name="nodePids[]" value="<?php echo $node['id']?>" <?php echo $str;?>></td>
+					<td><?php echo $node['nodezdes']?></td>
+				</tr>
+				<tr>
+
+					<?php foreach ($node['child'] as $son) {
+							$str=isset($son['id'],$nodeIds)?"checked":'';
+						?>
+					 <td><input type="checkbox" name="nodeIds[]" value="<?php echo $node['id']?>" <?php echo $str?>></td>
+					 <td>
+
+					 	<?php echo $son['nodezdes']?>
+					 </td>
+					<?php }?>
+				</tr>
+			<?php }?>
+			<tr>
+				<td><input type="submit" value="提交"></td>
+			</tr>
+		</table>
+		
+	</form>
+</body>
+</html>

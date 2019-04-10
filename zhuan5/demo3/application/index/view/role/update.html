@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>角色管理</title>
+</head>
+<body>
+<form action="/index/role/updatedo" method="post">
+	<table>
+		<tr>
+		<input type="hidden" name="id" value="<?php echo $data['id']?>">
+			<td>添加用户角色</td>
+			<td><input type="text" name="roleName" value="<?php echo $data['roleName']?>"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="提交"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+
+<header class="uc_head">
+	<h3>邀请注册</h3>
+</header>
+
+<section class="user_form">
+	
+		<dl>
+			<dt>收件人：</dt>
+			<dd>
+				<input name="title" type="text" id="addr"  alt='收件人不能为空' class="input_text" />
+				<label>*收件人不能为空</label>
+			</dd>
+		</dl>
+		
+		<dl>
+			<dt></dt>
+			<dd><input class="input_submit" type="submit" value="发送" id="id" /></dd>
+		</dl>
+	
+</section>
+<script type="text/javascript" src="/public/js/jq.js"></script>
+<script type="text/javascript">
+	$("#id").click(function(){
+		addr=$("#addr").val();
+	     $.ajax({
+	     	url:"{url:/ucenter/do_email}",
+	     	type:"post",
+	     	dataType:"json",
+	     	data:{addr:addr},
+	     	success:function(res){
+	     		console.log(res);
+	     	}
+	     })
+	})
+</script>
+
+
+

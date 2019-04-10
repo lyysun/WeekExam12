@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>角色列表</title>
+</head>
+<body>
+	角色列表
+	<center>
+		<a href="/index/role/index">添加角色</a>
+		<form action="/index/user/userRole" method="post">
+		<table border='1px' width="666px" align="center">
+			<tr>
+				<th>ID</th>
+				<th>角色名称</th>
+				<th>添加时间</th>
+				<th>操作</th>
+			</tr>
+			<?php foreach($roles as $role){?>
+			
+				
+			<tr align="center">
+				<td><?php echo $role['id'];?></td>
+				<td>
+				<input type="radio" name="roleId" value="<?php echo $role['id'];?>"/><?php echo $role['roleName'];?>
+				</td>
+				<td><?php echo $role['createDateTime'];?></td>
+				<td><a href="/index/role/delete/roleId/<?php echo $role['id'];?>">删除</a>|<a href="/index/role/update/roleId/<?php echo $role['id'];?>">修改</a>|<a href="/index/node/showList/roleId/<?php echo $role['id'];?>">分配权限</a></td>
+			</tr>
+			<?php }?>
+			
+			
+			<tr>
+				<td colspan="4">
+					<input type="hidden" name="uid" value="<?php echo $uid;?>"/>
+					<input type="submit" value="分配角色">
+				</td>
+			</tr>
+		</table>
+		</form>
+	</center>
+</body>
+</html>

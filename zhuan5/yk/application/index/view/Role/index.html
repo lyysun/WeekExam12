@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+
+</head>
+<body>
+<center>
+<table>
+	<?php foreach ($data as $item) {?>
+ 			<tr>
+ 				<td><?php echo $item['roleDes']?></td>
+ 			</tr>
+ 			<tr>
+ 			<?php foreach ($item['child'] as $son) {?>
+ 				<td>&nbsp&nbsp <a href=""><?php echo $item['roleDes']?></a> </td>
+ 			<?php }?>
+ 			</tr>
+ 		<?php }?>
+ 		</table>
+ 		</center>
+</body>
+</html>

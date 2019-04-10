@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<?php foreach ($data as $k => $v) {?>
+		<tr>
+			<td><?php echo $v['name']?></td>
+			<td><a href="/index/rbac/shownode/id/<?php echo $v['id']?>">分配权限</a></td>
+		</tr>
+		<?php }?>
+	</table>
+</body>
+</html>

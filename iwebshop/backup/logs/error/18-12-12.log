@@ -1,0 +1,479 @@
+<ERROR_BLOCK>
+excepInfo: INSERT INTO iwebshop_user ( `username`,`password`,`inviterid` ) VALUES ( '李园园','e10adc3949ba59abbe56e057f20f883e','' ) 
+ -- Unknown column 'inviterid' in 'field list'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-12 11:05:08
+#0 IWEB_PATH/lib/web/model/model_class.php(128): IDB->query(INSERT INTO iwebshop_user ( `username`,`password`,`inviterid` ) VALUES ( '李园园','e10adc3949ba59abbe56e057f20f883e','' ) )
+#1 IWEB_PATH/plugins/_userInfo/_userInfo.php(250): IModel->add()
+#2 : _userInfo->userRegAct()
+#3 IWEB_PATH/classes/plugin.php(106): call_user_func_array()
+#4 IWEB_PATH/controllers/simple.php(64): plugin::trigger(userRegAct)
+#5 : Simple->reg_act()
+#6 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#7 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#8 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(reg_act)
+#9 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#10 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) 
+ -- Table 'iweb.iwebshop_2ykyy' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-12 18:35:39
+#0 IWEB_PATH/lib/web/model/model_class.php(128): IDB->query(INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) )
+#1 IWEB_PATH/controllers/moni1.php(15): IModel->add()
+#2 : MONI1->add_do()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(add_do)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) 
+ -- Table 'iweb.iwebshop_2ykyy' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-12 18:35:58
+#0 IWEB_PATH/lib/web/model/model_class.php(128): IDB->query(INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) )
+#1 IWEB_PATH/controllers/moni1.php(15): IModel->add()
+#2 : MONI1->add_do()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(add_do)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) 
+ -- Table 'iweb.iwebshop_2ykyy' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-12 18:37:56
+#0 IWEB_PATH/lib/web/model/model_class.php(128): IDB->query(INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) )
+#1 IWEB_PATH/controllers/moni1.php(15): IModel->add()
+#2 : MONI1->add_do()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(add_do)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) 
+ -- Table 'iweb.iwebshop_2ykyy' doesn't exist
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-12 18:38:08
+#0 IWEB_PATH/lib/web/model/model_class.php(128): IDB->query(INSERT INTO iwebshop_2ykyy ( `name`,`zname`,`gz` ) VALUES ( '李园园','李园园','11' ) )
+#1 IWEB_PATH/controllers/moni1.php(15): IModel->add()
+#2 : MONI1->add_do()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(add_do)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:02:18
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(24): IModel->query()
+#2 : MONI1->show()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:03:47
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(24): IModel->query(name=)
+#2 : MONI1->show()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:03:56
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(24): IModel->query(name=)
+#2 : MONI1->show()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:07:26
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(25): IModel->query(name=)
+#2 : MONI1->show()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=张三 limit 50000
+ -- Unknown column '张三' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:21:52
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=张三 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(29): IModel->query(name=张三)
+#2 : MONI1->show()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:41:41
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(57): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:43:27
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(57): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:43:34
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(57): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:44:08
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(57): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:45:10
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(57): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:45:55
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(57): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:47:00
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(56): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:47:24
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(56): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000
+ -- Unknown column '李园园' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:48:36
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=李园园 limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(56): IModel->query(name=李园园)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name=lyy  limit 50000
+ -- Unknown column 'lyy' in 'where clause'
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 19:49:08
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name=lyy  limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(56): IModel->query(name=lyy )
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:03:30
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:03:55
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:04:21
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:04:56
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:05:09
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:06:23
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:07:18
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_moni1 WHERE name= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-12 20:07:26
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_moni1 WHERE name= limit 50000)
+#1 IWEB_PATH/controllers/moni1.php(78): IModel->query(name=)
+#2 : MONI1->show1()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

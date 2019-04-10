@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/index/user/add" method="post">
+		<table>
+			<tr>
+				<td>用户名</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="text" name="userpwd"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="提交"></td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+
+	<form action="/index/user/ajax" method="post" onsubmit="return false;">
+		用户名称<input type="text" name="name">
+		<input type="button" value="提交" id="ss">
+	</form>
+
+      <div id="content"></div>
+      <button id="delall">批删</button>
+
+</body>
+<script src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	function request(page,name=''){
+		// alert(11);
+		 $.ajax({
+		 	url:'/index/User/ajax',
+		 	type:"GET",
+		 	data:{page:page,name:name},
+		 	success:function(html){
+		 		// alert(html);
+		 		$('#content').html(html);
+		 		$("ul>li>a").attr('href','javascript:;');
+		 		$("ul>li>a").click(function(){
+		 			var name=$("input[name='name']").val();
+		 			// alert(name);
+		 			var p=$(this).html();
+		 			request(p,name);
+		 		})
+		 		
+
+		 	}
+		 })
+	}
+	request(1);
+         $(function(){
+         	$('#ss').click(function(){
+         		// alert(11);
+         		var name=$("input[name='name']").val();
+         		// alert(name);
+         		request(1,name);
+         	})
+
+            $('#delall').live('click',function(){
+            	var ids=[];
+            	$("tr>td>input").each(function(){
+            		var chek=$(this).attr('checked');
+            		if(chek!=undefined){
+            			id=$(this).val();
+            			ids.push(id);
+            		}
+            	})
+            	// alert(ids);
+            	$.ajax({
+            		url:'/index/user/delall',
+            		typr:"POST",
+            		data:{ids:ids},
+            		success:function(res){
+            			$("table tr td  input").each(function(i,v){
+            				var chk=$(v).attr('checked');
+            				if(chk){
+            					$(v).parent().parent().remove();
+            				}
+            			})
+            		}
+            	})
+            })
+           
+           $(".go").live('click',function(){
+
+           	var id=$(this).attr('data');
+           	// alert(id);
+           	var status=$(this).attr('status');
+           	// alert(status);
+           	if(status==0){
+           		status=1;
+           	}else{
+           		status=0;
+           	}
+           	$.ajax({
+           		url:'/index/user/statu',
+           		type:'POST',
+           		data:{id:id,status:status},
+           		success:function(msg){
+                     request(1);
+           		}
+           	})
+           
+           })
+
+         })
+
+	
+</script>
+</html>

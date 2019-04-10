@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="file" value="上传文件" id="file">
+      <progress max="100" value="0" id="progress"></progress>
+      <span>0%</span>
+      <input type="button" value="上传" onclick="upload()">
+</body>
+<script type="text/javascript" src="/public/js/jq.js"></script>
+<script type="text/javascript">
+	var file,start,size,sliceFile,sliceNo,end;
+
+	function upload(){
+		file =document.getElementById("file").files[0];
+		// console.log(file)
+		start=0;//开始初始值为0；
+		size=3*1024*1024; //设置切的大小；
+		end=start+size;  //结束位置  = 大小+开始的位置；
+		sliceNo=1;      //编号
+		sliceFile=cutFile(file);  //将文件传给切片方法
+		
+		sendsliceFile(sliceFile);  //将上面切完 上传 边切边传
+
+	}
+
+	//且文件
+	function cutFile(file){
+		sliceFile=file.slice(start,end);//分割
+          // console.log(sliceFile);
+		start=end; //第二次的开始位置
+		end=size+start; //第二次结束的位置
+
+		return sliceFile; //返回 执行第三次
+	}
+
+	//传文件方法
+      function sendsliceFile(sliceFile){
+      	//计算宗片数
+      	var blob_count=Math.ceil(file.size/size);
+              
+              a=parseInt(sliceNo/blob_count*100); //控制条 计算控制条的百分比
+
+              $("span").text(a+'%'); //赋值给span
+               progress.value=a; //控制条的滚动
+      	//实例化formdara对象
+      	var form=new FormData();
+      	// console.log(form);
+      	form.append("sliceFile",sliceFile);
+        
+      	form.append("sliceNo",sliceNo);
+      	form.append("filename",file.name);
+      	form.append("blob_count",blob_count);
+      	$.ajax({
+
+      		url:"{url:/test/upload}",
+      		data:form,
+      		dataType:"json",
+      		type:"post",
+      		contentType:false,
+      		processData:false,
+      		success:function(e){
+
+                  console.log(e);
+      		}
+      	})
+
+      	 if(start<file.size){//判断长度
+      	 	var t=setTimeout(function(){
+      	 		sliceNo++;
+      	 		
+      	 		sliceFile=cutFile(file);
+      	 		// console.log(sliceFile)
+      	 		sendsliceFile(sliceFile);
+      	 	},1000);
+      	 }else{
+      	 	clearTimeout(t);
+      	 }
+
+      }
+
+</script>
+</html>

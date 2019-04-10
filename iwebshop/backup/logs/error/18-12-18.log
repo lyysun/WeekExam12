@@ -1,0 +1,17 @@
+<ERROR_BLOCK>
+excepInfo: UPDATE iwebshop_seller SET  `is_lock` = ''  WHERE id = 
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-12-18 18:29:54
+#0 IWEB_PATH/lib/web/model/model_class.php(104): IDB->query(UPDATE iwebshop_seller SET  `is_lock` = ''  WHERE id = )
+#1 IWEB_PATH/controllers/member.php(820): IModel->update(id = )
+#2 : Member->ajax_seller_lock()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(ajax_seller_lock)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

@@ -1,0 +1,24 @@
+<table border="1">
+			<tr><td><input type="checkbox" name="zong" id="zong"></td>
+				<td>id</td>
+				<td>用户名</td>
+				<td>密码</td>
+				<td>造作</td>
+			</tr>
+			<?php foreach ($data as $k => $v) {?>
+				<tr>
+                     <td><input type="checkbox" name="ids" value="<?php echo $v['id']?>"></td>
+					<td><?php echo $v['id']?></td>
+					<td><?php echo $v['userName']?></td>
+					<td><?php echo $v['password']?></td>
+					<td>
+					<a href="/index/user/delete/id/<?php echo $v['id']?>">删除</a>
+					<a href="/index/user/update/id/<?php echo $v['id']?>">修改</a>
+					<a href="/index/Userrole/index/userId/<?php echo $v['id']?>">分配角色</a>
+					</td>
+				</tr>
+			<?php }?>
+		</table>
+		 <button id="fun">反选</button>
+		  <button id="delall">批删</button>
+		<?php echo $link;?>

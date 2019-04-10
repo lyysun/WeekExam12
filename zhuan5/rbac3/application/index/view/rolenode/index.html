@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分配权限</title>
+</head>
+<body>
+<form action="/index/rolenode/add" method="post">
+	<table>
+	<input type="hidden" name="roleId" value="<?php echo $roleId;?>">
+		<?php foreach ($list as $item) {
+			$str=in_array($item['id'], $nodeIds)? "checked":'';
+
+			?>
+			
+			<tr>
+				<td>
+				<input type="checkbox" name="nodePids[]" value="<?php echo $item['id']?>" id="parent_<?php echo $item['id']?>" <?php echo $str;?>> 
+				<?php echo $item['nodeDes']?>
+				</td>
+			</tr>
+            <tr>
+            	<?php foreach ($item['child'] as $son) {
+            		$str=in_array($son['id'],$nodeIds)?"checked":'';
+            		?>
+            		<td>
+            		<input type="checkbox" name="nodeIds[]" value="<?php echo $son['id'];?>" class="son" data="<?php echo $son['pid']?>" <?php echo $str;?>>
+            		<?php echo $son['nodeDes'];?>
+            		</td>
+            	<?php }?>
+            </tr>
+
+		<?php }?>
+		<tr>
+			<td><input type="submit" value="提交"></td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript" src="/static/js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+	var pre="parent_";
+	   $(function(){
+         $(".son").click(function(){
+         	var id=$(this).attr('data');
+         	var check=$('#'+pre+id).attr('checked');
+         	if(check==undefined){
+         		alert("请选择父级全线");
+         	}
+
+         })
+
+	   })
+	</script>
+</body>
+</html>

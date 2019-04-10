@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>用户</td>
+        <td>时间</td>
+        <td>操作</td>
+
+    </tr>
+    {volist name="data" id="vo"}
+        <tr>
+            <td>{$vo.id}</td>
+            <td>{$vo.userName}</td>
+            <td>{$vo.createDateTime}</td>
+            <td><a href="{:url('index/User/delete')}?id={$vo.id}">删除</a>
+                <a href="{:url('index/User/update')}?id={$vo.id}">修改</a>
+                <a href="index/node/addUserNode">分配权限</a></td>
+        </tr>
+    {/volist}
+</table>
+</body>
+</html>

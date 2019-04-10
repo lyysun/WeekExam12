@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>抽奖列表</h3>
+	<table border="1">
+		<tr>
+			<td>id</td>
+			<td>奖品名称</td>
+			<td>奖品数量</td>
+
+		</tr>
+		{volist name="data" id="vo"}
+		<tr>
+			<td>{$vo.prize_id}</td>
+			<td>{$vo.prize_name}</td>
+			<td>{$vo.prize_num}</td>
+			<td><a href="#" onclick="del({$vo.prize_id})">删除</a></td>
+		</tr>
+		{/volist}
+	</table>
+	<button onclick="prize()">点击抽奖</button>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript">
+
+function del(id){
+		$.ajax({
+			url:"{:url('index/prizedel')}",
+			type:"get",
+			data:{id:id},
+			dataType:"json",
+			success:function(e){
+		         if(e.code==1){
+		         	history.go(0);
+		         }
+			}
+		})
+	}
+	
+	function prize(){
+		$.ajax({
+			url:"{:url('index/chou')}",
+			type:"get",
+			dataType:"json",
+			success:function(e){
+				
+			if(e.code==1){
+				alert("您抽中"+e.prize_name);
+				history.go(0);
+			}
+			}
+		})
+	}
+</script>
+</html>

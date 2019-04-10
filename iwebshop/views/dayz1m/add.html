@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<center>
+<h2>注册页</h2>
+	<form action="{url:/dayz1m/add_do}" method="post">
+		<table>
+			<tr>
+				<td>用户名：<input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>密码：<input type="text" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>地址：<input type="text" name="addr"></td>
+				<td>
+				<div id="map" style="width:300px;height:100px;border:solid;"></div>
+			    </td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="注册"></td>
+			</tr>
+		</table>
+	</form>
+	</center>
+</body>
+<script type="text/javascript" src="/public/js/jq.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=fZAQ5GXps6eyzh88eCoOjH1kDUMwe06u"></script>
+
+
+<script type="text/javascript">
+	$("input[name='addr']").blur(function(){
+		  addr=$(this).val();
+		 if(addr==''){
+	      alert("不能为空");
+		 	return false;
+		 }
+
+       $.ajax({
+       	url:"{url:/dayz1m/dtss}",
+       	data:{addr:addr},
+       	dataType:"json",
+       	type:"post",
+       	success:function(res){
+       		// alert(res);
+       		// console.log(res);
+         var lng=res.lng;
+          var lat=res.lat;
+          console.log(lng);
+          var map = new BMap.Map("map");
+	var point = new BMap.Point(lng,lat);
+	map.centerAndZoom(point,12);
+	var geoc = new BMap.Geocoder();    
+
+	map.addEventListener("click", function(e){        
+		var pt = e.point;
+		geoc.getLocation(pt, function(rs){
+			var addComp = rs.addressComponents;
+			alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+		});        
+	});
+        
+       	}
+       })
+
+
+	})
+
+	var map=new BMap.Map("map");
+	var point = new BMap.Point(116.331398,39.897445);
+	map.centerAndZoom(point,12);
+	
+</script>
+</html>

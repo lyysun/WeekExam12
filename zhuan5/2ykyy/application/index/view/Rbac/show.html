@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	ul,li{
+		list-style: none;
+		float: left;
+	}
+	</style>
+</head>
+<body>
+<div id="box">
+	
+</div>
+
+</body>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+//分页
+	function request(page){
+          $.ajax({
+          	url:"/index/rbac/ajax",
+          	type:"post",
+          	data:{page:page},
+          	success:function(html){
+          		$("#box").html(html);
+          		$('ul li a').attr('href',"javascript:;");
+          		$("ul li a").live("click",function(){
+          			p=$(this).html();
+          			// alert(p); return;
+          			request(p);
+          		})
+
+          	}
+          })
+	}request(1);
+
+	$(function(){
+      //修改
+		$("#xg").live("blur",function(){
+			// alert(1)
+			id=$(this).attr("data");
+			name=$(this).attr("value");
+			// alert(name)
+			$.ajax({
+                 url:"/index/rbac/xg",
+                 type:"get",
+                 data:{id:id,name:name},
+                 success:function(res){
+                 	alert(res);
+                 }
+			})
+		})
+
+    //删除
+	  $("#del").live("click",function(){
+	  	   id=$(this).attr('data');
+	  	   // alert(id)
+	  	   _this=$(this);
+	  	   $.ajax({
+	  	   	url:'/index/rbac/del',
+	  	   	type:"get",
+	  	   	data:{id:id},
+	  	   	success:function(res){
+                    // alert(res);
+                    json=JSON.parse(res);
+                    if(json.code=='1'){
+                    	alert("删除成功");
+                    	_this.parent().parent().remove();
+                    }
+	  	   	}
+	  	   })
+	  })
+	})
+</script>
+</html>

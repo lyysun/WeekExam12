@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="{url:/test/updo}" method="post">
+<table>
+	{foreach:items=$res}
+      <tr>
+      	<td><input type="text" value="{$item['name']}" name="name"></td>
+      	<td><input type="text" value="{$item['pwd']}" name="pwd"></td>
+      	<input type="hidden" value="{$item['id']}" name="id">
+      </tr>
+	{/foreach}
+	<input type="submit" value="修改">
+</table>
+	 </form>
+</body>
+</html>

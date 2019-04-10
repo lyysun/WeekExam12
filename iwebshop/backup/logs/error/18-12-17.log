@@ -1,0 +1,32 @@
+<ERROR_BLOCK>
+excepInfo: Redis server went away
+excepFile: D:\phpstudy\PHPTutorial\WWW\iwebshop\controllers\moni1.php
+excepLine: 95
+excepCode: 0
+excepTime: 2018-12-17 16:18:05
+#0 IWEB_PATH/controllers/moni1.php(95): Redis->get(nm)
+#1 : MONI1->ss()
+#2 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#3 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#4 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(ss)
+#5 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#6 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: Could not open /upload/img/ for reading! File does not exist.
+excepFile: D:\phpstudy\PHPTutorial\WWW\iwebshop\lib\core\util\phpexcel\PHPExcel\Reader\Excel2007.php
+excepLine: 82
+excepCode: 0
+excepTime: 2018-12-17 18:34:07
+#0 IWEB_PATH/lib/core/util/phpexcel/PHPExcel/IOFactory.php(280): PHPExcel_Reader_Excel2007->canRead(/upload/img/)
+#1 IWEB_PATH/lib/core/util/phpexcel/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile(/upload/img/)
+#2 IWEB_PATH/controllers/moni1.php(122): PHPExcel_IOFactory::load(/upload/img/)
+#3 : MONI1->excel_do()
+#4 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#5 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#6 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(excel_do)
+#7 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#8 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

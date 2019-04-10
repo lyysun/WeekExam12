@@ -1,0 +1,6 @@
+[ 2018-10-09T08:50:21+08:00 ] 127.0.0.1 /zhuan6/cs/day6/index.phph/Admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001095s ]
+ERR: 无法加载模块:Index.phph
+

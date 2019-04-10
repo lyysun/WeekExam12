@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+      ul,li{
+      	list-style: none;
+      	float: left;
+
+      }
+	</style>
+</head>
+<body>
+<center>
+     
+     <table>
+     	<tr>
+     		<td>名称</td>
+     		<td><input type="text" name="name"></td>
+     		<td><input type="button" value="搜索" id="ss"></td>
+     	</tr>
+     </table>
+
+	<div id="content"></div>
+	<button id="delall">批删</button>
+	<button id="fun">全选</button>
+	<button id="fun1">全不选</button>
+	<button id="fun2">反选</button>
+	</center>
+</body>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	function request (page,name=''){
+		// alert(name);
+           $.ajax({
+           	url:"/index/rbac/ajax",
+           	type:"get",
+           	data:{page:page,name:name},
+           	success:function(html){
+                $("#content").html(html);
+                $("ul li a").attr('href',"javascript:;");
+                $("ul li a").live("click",function(){
+                	name= $("input[name='name']").val();
+                	// alert(name);
+                	p=$(this).html();
+                	request(p,name);
+                })
+
+
+           	}
+           })
+	}
+	request(1);
+   
+	$(function(){
+           //搜索
+           $("#ss").click(function(){
+           	  name= $("input[name='name']").val();
+           	  // alert(name);
+           	  request(1,name);
+           })
+         //批删
+             $("#delall").live('click',function(){
+         
+              var ids=[];
+              $("tr>td>input").each(function(){
+              	check=$(this).attr("checked");
+              	if(check!=undefined){
+              		var id=$(this).val();
+              		ids.push(id);
+              	}
+              })
+              // alert(ids);
+              $.ajax({
+              	url:"/index/rbac/delall",
+              	type:"post",
+              	data:{ids:ids},
+              	success:function(msg){
+                   alert('删除成功');
+                     json=JSON.parse(msg);
+                     console.log(json);
+                     if(json.code=='1'){
+		                     $("table tr td input").each(function(i,v){
+		                     	ch=$(this).attr("checked");
+		                     	if(ch){
+		                     		$(v).parent().parent().remove();
+		                     	}
+		                     })
+
+	                     }
+              	}
+              })
+                
+           })
+           //几点技改
+           $("#xg").live('blur',function(){
+                 var id=$(this).attr('data');
+                 var name=$(this).attr('value');
+                 $.ajax({
+                 	url:"/index/rbac/xg",
+                 	type:'get',
+                 	data:{id:id,name:name},
+                 	success:function(msg){
+                 		     // alert(msg);
+                 		     json=JSON.parse(msg);
+                 		     // alert(json);
+                 		     if(json.code=='1'){
+                 		     	alert("修改成功");
+                 		     	 request(1);
+                 		     }
+                            
+                 	}
+                 })
+        
+
+           })
+           //全选
+           $('#fun').live('click',function(){
+           	 $("input[name='ids']").attr("checked",true);
+           })
+           //全不选
+            $('#fun1').live('click',function(){
+           	 $("input[name='ids']").attr("checked",false);
+           })
+            //反选
+             $('#fun2').live('click',function(){
+             	$("input[name='ids']").each(function(){
+             		$(this).prop("checked",!$(this).prop("checked"));
+             	})
+           	 
+           })
+
+
+
+
+
+
+	})
+</script>
+</html>

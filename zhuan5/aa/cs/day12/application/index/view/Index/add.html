@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="/jquery-1.8.3.js"></script>
+</head>
+<body>
+<form action="/index/index/add" method="post" enctype="multipart/form-data">
+	<table>
+		<tr>
+			<td>文章标题</td>
+			<td><input type="text" name="bt" id="bt">
+			<span id="btin"></span></td>
+		</tr>
+		<tr>
+			<td>文章分类</td>
+			<td>
+				<select name="fl" id="">
+					<option value="经典小说">经典小说</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>文章作者</td>
+			<td><input type="text" name="zz" id="zz">
+			<span id="zzin"></span></td>
+		</tr>
+		<tr>
+			<td>文章封面</td>
+			<td><input type="file" name="image"></td>
+		</tr>
+		<tr>
+			<td>
+				w文章内容
+			</td>
+			<td><textarea name="nr" id="nr" cols="30" rows="10" onblur="nra()"></textarea>
+			<span></span></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="确认添加"></td>
+		</tr>
+	</table>
+</form>
+	<script type="text/javascript">
+	$('#bt').blur(function(){
+		var bt=document.getElementById('bt').value;
+		if(bt!=''){
+			$('#btin').html("v");
+		}
+	})
+      
+      // function bta(){
+      // 	var bt=document.getElementById('bt').value;
+      // 	var btin=document.getElementById('btin');
+      // 	if(bt!=''){
+      // 		btin.innerHTML="v";
+      // 	}else{
+      // 		btin.innerHTML="标题不能为空";
+      // 	}
+      // }
+      // function zza(){
+      // 	var zz=document.getElementById('zz').value;
+      // 	var zzin=document.getElementById('zzin');
+      // 	if(zz!=''){
+      // 		zzin.innerHTML="v";
+      // 	}else{
+      // 		zzin.innerHTML="作者不能为空";
+      // 	}
+      // }
+      // function nra(){
+      // 	var nr=document.getElementById('nr').value;
+      // 	var nrin=document.getElementById('nrin');
+      // 	if(nr!=''){
+      // 		nrin.innerHTML="v";
+      // 	}else{
+      // 		nrin.innerHTML="内容不能为空";
+      // 	}
+      // }
+
+      // if(bta&&zza&&nra){
+      // 	return ;
+      // }else{
+      // 	return false;
+      // }
+	</script>
+</body>
+</html>

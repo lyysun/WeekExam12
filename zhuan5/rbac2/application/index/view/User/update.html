@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="/index/user/updatedo" method="post">
+		<table>
+			<tr>
+			<input type="hidden" name="id" value="<?php echo $data['id']?>">
+				<td>用户名</td>
+				<td><input type="text" name="username" value="<?php echo $data['username']?>"></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="text" name="userpwd" value="<?php echo $data['userpwd']?>"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="提交"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

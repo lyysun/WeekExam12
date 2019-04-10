@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body bgcolor="#999">
+<center>
+	<h3>用户登录</h3>
+	<table>
+		<tr>
+			<td>用户名称</td>
+			<td><input type="text" name="name" id="name"></td>
+		</tr>
+		<tr>
+			<td>用户密码</td>
+			<td><input type="text" name="pwd" id="pwd"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="button" value="登陆" id="dl"></td>
+		</tr>
+	</table>
+</center>
+	<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+        $("#dl").live("click",function(){
+        	// alert(1)
+        	name=$("#name").val();
+        	// alert(name)
+        	pwd=$("#pwd").val();
+        	// alert(pwd)
+        	$.ajax({
+        		url:"/index/login/yz",
+        		type:"post",
+        		data:{name:name,pwd:pwd},
+        		success:function(res){
+        			
+        			js=JSON.parse(res);
+        			
+        			if(js.code=='1'){
+        			alert("登陆成功");
+        				location="/index/rbac/sessionnode";
+        			}
+
+        		}
+        	})
+        })
+	</script>
+</body>
+</html>

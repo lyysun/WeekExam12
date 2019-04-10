@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td><input type="checkbox">编号</td>
+		<td>商品名称</td>
+		<td>货号</td>
+		<td>价格</td>
+	</tr>
+	<?php foreach ($data as $k => $v) {?>
+		<tr>
+			<td><input type="checkbox"><?php echo $v['id']?></td>
+			<td>
+			<input type="text" data="<?php echo $v['id']?>" id="a" value="<?php echo $v['name']?>">
+			</td>
+			<td><?php echo $v['hh']?></td>
+			<td><?php echo $v['jg']?></td>
+		</tr>
+	<?php }?>
+</table>
+	<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+       $('#a').live('blur',function(){
+                
+             var id=$(this).attr('data');
+             // alert(id);
+             var name=$(this).attr('value');
+             // alert(name);
+
+                $.ajax({
+
+                	url:"/index/index/xg",
+                	type:'POST',
+                	data:{id:id,name:name},
+                	success:function(msg){
+                		// alert(msg);
+                        if(msg==0){
+                        	alert('成功');
+                        }else{
+                        	alert('失败');
+                        }
+                	}
+
+
+                })
+      
+       })
+        	
+       
+	</script>
+</body>
+</html>

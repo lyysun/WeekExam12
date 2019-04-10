@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+    <form action="/index/rbac/addrolenode" method="get">
+
+	 <table border="1">
+	 	<h3>你在为[{$roleshow.name}]分配权限</h3>
+	 	<p>权限列表如下：</p>
+         <input type="hidden" name="roleid" value="{$roleshow.id}">
+	 	<?php foreach ($data as $k => $v) {?>
+	 		
+	    <input type="checkbox" name="nodeid[]" value="<?php echo $v['id']?>"><?php echo $v['name'];?>
+	 		
+	 	<?php }?>
+	 	<tr>
+	 		<td><input type="submit" value="提交"></td>
+	 	</tr>
+	 </table>
+	 </form>
+</body>
+</html>

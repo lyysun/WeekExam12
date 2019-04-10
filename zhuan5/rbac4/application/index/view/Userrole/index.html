@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="/index/userrole/add" method="post">
+	<table>
+	<input type="hidden" name="userId" value="<?php echo $userId;?>">
+		<?php foreach ($data as $user) {
+            $str=($user['id']==$roleId)?"checked":"";
+			?>
+		<tr><td><input type="checkbox" name="roleId"> <?php echo $str;?>></td>
+			<td><?php echo $user['roleName'];?></td>
+		</tr>
+		<?php }?>
+		<tr>
+			<td><input type="submit" value="提交"></td>
+		</tr>
+	</table>
+
+	</form>
+</body>
+</html>

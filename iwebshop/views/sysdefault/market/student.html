@@ -1,0 +1,103 @@
+
+{set:
+	$start = IFilter::act(IReq::get('start'));
+	$end   = IFilter::act(IReq::get('end'));
+	$countData = statistics::spandAmount($start,$end);
+}
+
+{js:my97date}
+{js:chart}
+
+<div class="headbar">
+	<div class="position"><span>统计</span><span>></span><span>基础数据统计</span><span>></span><span>销售额统计</span></div>
+	<form action='{url:/}' method='get'>
+		<input type='hidden' name='controller' value='market' />
+		<input type='hidden' name='action' value='amount' />
+		<div class="operating">
+			<div class="search f_l">
+				<input type="text" name='start' class="Wdate" id="date_start" value='{$start}' pattern='date' alt='' onFocus="WdatePicker()" /> —— <input type="text" name='end' pattern='date' value='{$end}' class="Wdate" id="date_end" onFocus="WdatePicker()" />
+				<button class="btn"><span>查 询</span></button>
+				<button class="btn" onclick="amountReport()"><span>导出报表</span></button>
+			</div>
+		</div>
+    </form>
+</div>
+
+<div class="content_box">
+	<h3>销售金额统计：</h3>
+	<div class='cont'>
+		<ul>
+			<li>销售金额统计，更清楚了了解每月销售的情况，为你下一步的营销计划做出更好的判定！</li>
+		</ul>
+	</div>
+</div>
+
+<div class='content_box'>
+	 <div id="container" style="min-width:400px;height:400px"></div>
+</div>
+
+
+<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
+<script type='text/javascript'>
+//图表生成
+
+var chart = Highcharts.chart('container', {
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: '成绩'
+    },
+    subtitle: {
+        text: '成绩'
+    },
+    xAxis: {
+        categories: [<?php echo $arr['name']?>]
+    },
+    yAxis: {
+        title: {
+            text: '分数'
+        },
+        labels: {
+            formatter: function () {
+                return this.value + '分';
+            }
+        }
+    },
+    tooltip: {
+        crosshairs: true,
+        shared: true
+    },
+    plotOptions: {
+        spline: {
+            marker: {
+                radius: 4,
+                lineColor: '#666666',
+                lineWidth: 1
+            }
+        }
+    },
+    series: [{
+        
+        name: '成绩',
+       
+        data: [<?php echo $arr['num']?>]
+    }]
+});
+
+
+
+
+function amountReport()
+{
+	var url   = '{url:/market/amount_report/start/@start@/end/@end@}';
+	var start = $('#date_start').val();
+	var end   = $('#date_end').val();
+	url = url.replace("@start@",start).replace("@end@",end);
+	window.open(url);
+	return false;
+}
+</script>

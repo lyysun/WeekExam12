@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h3>首页</h3>
+<form action="/index/User/updatedo" method="post">
+    <table>
+        <tr>
+            <input type="hidden" name="id" value="<?php echo $userinfo['id']?>">
+            <td>用户</td>
+            <td><input type="text" name="userName" value="<?php echo $userinfo['userName']?>"></td>
+
+        </tr>
+        
+        <tr>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

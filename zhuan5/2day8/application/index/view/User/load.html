@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+</head>
+<body>
+<div id="content"> 
+
+	
+		<table>
+			<tr>
+				<td>id</td>
+				<td>名称</td>
+
+			</tr>
+			{volist name="data" id="vo"}
+		  <tr>
+			<td>{$vo.id}<td>
+			<td>{$vo.name}</td>
+		   </tr>
+			{/volist}
+		</table>
+		<div id="page">
+		<?php 
+		    for($i=1;$i<=$page;$i++){
+		    	echo "<a>$i</a>";
+		    }
+		?>
+			     </div>
+</div>
+</body>
+<script type="text/javascript">
+	$('#page a').live('click',function(){
+           // console.log($(this).text());
+           var page=$(this).text();
+           // console.log(page);return false;
+           $.ajax({	
+           	type:'get',
+           	url:'/index/user/index',
+            
+           	data:{page:page},
+           	success:function(ajax){
+                  console.log(ajax);
+                  $('#content').html(ajax);
+           	}
+
+           })
+	})
+</script>
+</html>

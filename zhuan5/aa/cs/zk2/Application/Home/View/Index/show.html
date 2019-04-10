@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="__PUBLIC__/jquery-1.8.3.js"></script>
+</head>
+<body id='bod'>
+<h3>文档列表</h3>
+	<table border="1">
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>编号</td>
+			<td>标题</td>
+		</tr>
+		<volist name="data" id="vo">
+			<tr>
+				<td><input type="checkbox" name="box" value="{$vo.id}"></td>
+				<td>{$vo.id}</td>
+				<td>
+				<a href="javascript:void(0)" class="bt">{$vo.bt}</a>
+				</td>
+				<td><a href="__URL__/delete/id/{$vo.id}" >单删</a></td>
+			</tr>
+		</volist>
+	</table>
+	<button class="del_all">批删</button>
+	<button onclick="fun1()">全选</button>
+	<button onclick="fun2()">全不选</button>
+	<button onclick="fun3()">反选</button>
+</body>
+<script type="text/javascript">
+
+  $('.bt').replaceWith(function(){
+  	  alert(11);
+  });
+
+    $(".del_all").click(function(){//批删
+         var box=document.getElementsByName('box');
+         var str="";
+         for(var i=0;i<box.length;i++){
+         	if(box[i].checked==true){
+         		str+=','+box[i].value;
+         	}
+         }
+         str=str.substr(1);
+         var ajax=new XMLHttpRequest();
+         ajax.open('get','./del_all/id/'+str);
+         ajax.send();
+         ajax.onreadystatechange=function(){
+         	document.getElementById('bod').innerHTML=ajax.responseText;
+         }
+
+
+    });
+
+
+	function fun1(){//全选
+		var box=document.getElementsByName('box');
+		for(var i=0;i<box.length;i++){
+			box[i].checked=true;
+		}
+	}
+	function fun2(){//全不选
+		var box=document.getElementsByName('box');
+		for(var i=0;i<box.length;i++){
+			box[i].checked=false;
+		}
+	}
+	function fun3(){//反选
+		var box=document.getElementsByName('box');
+		for(var i=0;i<box.length;i++){
+			box[i].checked=!box[i].checked;
+		}
+	}
+</script>
+</html>

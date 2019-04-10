@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="/index/role/addRoleNode" method="post">
+	<table border="1">
+		<?php foreach($nodes as $parent){?>
+			<tr>
+				<th><?php echo $parent['nodeDes'].'ID：'.$parent['id'];?></th>
+				<!-- <th><a href="/index/node/index">添加操作</a></th> -->	
+			</tr>	
+		
+			<tr>
+			<?php foreach($parent['item'] as $item){?>
+			
+				<td>
+				<input type="checkbox" name="nodeIds[]" value="<?php echo $item['id'];?>"/>
+				<?php echo $item['nodeDes'];?>
+				<a href="">X</a>
+				<a href="javascript:;" id="update" nodeId="<?php echo $item['id']?>" nodeDes="<?php echo $item['nodeDes']?>">修改</a>
+				</td>
+			<?php }?>
+			
+			</tr>
+		<?php }?>
+			<tr>
+				<td colspan="3">
+			<input type="hidden" name="roleId" value="<?php echo  !empty($roleId)?$roleId:0;?>"/>
+					<input type="submit" value="分配权限"/>
+				</td>
+			</tr>
+			
+	</table>
+</form>
+
+	
+</body>
+</html>

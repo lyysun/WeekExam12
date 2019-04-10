@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<center>
+<h3>展示</h3>
+<table border="1" >
+       <foreach name="data" item="vo">
+       	<tr>
+       		<td> <input type="text" id="xg" data="{$vo.id}" value="{$vo.wz}"></td>
+       		<td>{$vo.fy}</td>
+       		<td>{$vo.mj}</td>
+       		<td>{$vo.jmj}</td>
+       		<td>{$vo.fx}</td>
+       		<td>{$vo.jz}</td>
+       		<td>{$vo.xz}</td>
+       		<td>{$vo.zt}</td>
+       		<td><button id="del" data="{$vo.id}">删除</button></td>
+       	</tr>
+       </foreach>
+</table>
+	</center>
+</body>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$("#del").live('click',function(){
+		// alert(1)
+		id=$(this).attr('data');
+		// alert(id)
+	      _this=$(this);
+		$.ajax({
+			url:"__URL__/del",
+			type:"get",
+			data:{id:id},
+			success:function(res){
+                  alert("是否删除");
+                  
+                  	_this.parent().parent().remove();
+                
+			}
+		})
+	})
+
+	$("#xg").live('blur',function(){
+		// alert(1)
+		id=$(this).attr('data');
+		// alert(id)
+	  data=$(this).attr('value');
+		$.ajax({
+			url:"__URL__/xg",
+			type:"get",
+			data:{id:id,data:data},
+			success:function(res){
+              
+                  
+                
+                
+			}
+		})
+	})
+</script>
+</html>

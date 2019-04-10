@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>权限列表</title>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+		}
+		#tan{
+			display:none;
+			width:300px;
+			height:180px;
+			padding:30px;
+			background:#abcdef;
+			position: absolute;
+			top:100px;
+			left:400px;
+			z-index: 9999;
+		}
+		#back{ width:100%; height:100%; position:fixed; top:0; background:#000; opacity:0.2;display:none}
+	</style>
+</head>
+<body bgcolor="#abcdef">
+	<center>
+		<form action="/index/node/add" method="post"> 
+			权限名称:<input type="text" name="nodeName" />
+			权限中文描述:<input type="text" name="nodeDes"/>
+			权限父级Pid:<input type="text" name="pid"/>
+			<input type="submit" value="添加权限">
+		</form>
+		<hr/>
+		<form action="/index/role/addRoleNode" method="post">
+		<table  width="1000px">
+			<?php 
+				foreach($nodes as $parent){
+			?>
+			<tr>
+				<th colspan='2' align="left"><?php echo $parent['nodeDes'].'ID：'.$parent['id'];?></th>
+				<!-- <th><a href="/index/node/index">添加操作</a></th> -->	
+			</tr>
+			<tr>
+			<?php
+				if(isset($parent['item']) && !empty($parent['item'])){
+					foreach($parent['item'] as $item){
+			?>
+				<td>
+					<input type="checkbox" name="nodeIds[]" value="<?php echo $item['id'];?>" <?php if(!empty($roleId) && in_array($item['id'],$nodeIds)){echo 'checked';} ?>/><?php echo $item['nodeDes'];?>
+					<a href="/index/node/delete/nodeId/<?php echo $item['id'];?>">X</a>
+					<a href="javascript:;" id="update" nodeId="<?php echo $item['id']?>" nodeDes="<?php echo $item['nodeDes']?>">修改</a>
+				</td>
+			<?php
+					}
+				}
+			?>
+			</tr>
+			<?php
+			}
+			?>
+			<tr>
+				<td colspan="3">
+					<input type="hidden" name="roleId" value="<?php echo !empty($roleId)?$roleId:0;?>"/>
+					<input type="submit" value="分配权限"/>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</center>
+	<div id="tan">
+		<center>
+			<h2>角色权限修改</h2>
+				<input type="hidden" name="nodeId" id="nodeId"/>
+				权限名称:<input type="nodeDes" name="nodeDes" id="nodeDes"/>
+				<input type="button" value="修改	" id="doUpdate">
+		</center>
+	</div>
+	<div id="back"></div>
+</body>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#update').live('click',function(){
+			$('#back').show();
+			$('#tan').show();
+			var nodeId=$(this).attr('nodeId');
+			var nodeDes=$(this).attr('nodeDes');
+			$('#nodeId').val(nodeId);
+			$('#nodeDes').val(nodeDes);
+		})
+		$('#doUpdate').click(function(){
+			var nid = $('#nodeId').val();
+			var des = $('#nodeDes').val();
+			$.ajax({
+				url:'/index/node/ajaxUpdate',
+				type:"POST",
+				asyn:false,
+				dataType:'json',
+				data:{'nodeId':nid,'nodeDes':des},
+				success:function(res){
+					alert(res.message);
+					if(res.status==0){
+						$('#tan').hide();
+						$('#back').hide();
+						window.location.reload();
+					}
+				},
+				error:function(res){
+					alert('网络异常,请重试!');
+				}
+			});
+		})
+	})
+</script>
+</html>

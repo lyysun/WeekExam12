@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h3><a href="/index/login/index">退出登陆</a></h3>
+	<table>
+		<ul>
+			{volist name="a" id="vo"}
+           <li d="1-{$vo.level}" y="1-{$vo.level+1}">
+          	<?php echo str_repeat("--------",$vo['level']);?>
+          	<a href="/index/{$vo.url}">{$vo.name}</a>
+           </li>
+			{/volist}
+		</ul>
+	</table>
+</body>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$("li").live('click',function(){
+		$(this).siblings().toggle();
+	})
+</script>
+</html>

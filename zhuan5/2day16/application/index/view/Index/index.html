@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+		<td>文章标题</td>
+		<td>文章分类</td>
+		<td>文章重要性</td>
+		<td>是否显示</td>
+		</tr>
+		<?php foreach ($data as $k => $v) {?>
+			<tr>
+				<td>
+				<input type="text" id="xg" data="<?php echo $v['id']?>" value="<?php echo $v['name']?>">
+				
+				</td>
+				<td><?php echo $v['fl']?></td>
+				<td><?php echo $v['zyx']?></td>
+				<td><?php echo $v['name']==1? "v":"x"?></td>
+
+			</tr>
+		<?php }?>
+	</table>
+</body>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$("#xg").live('blur',function(){
+		// alert(1);
+		id=$(this).attr('data');
+		name=$(this).attr('value');
+		$.ajax({
+			url:"/index/index/xg",
+			type:"get",
+			data:{id:id,name:name},
+			success:function(res){
+                    alert(res);
+			}
+		})
+	})
+</script>
+</html>

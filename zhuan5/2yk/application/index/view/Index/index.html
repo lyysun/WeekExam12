@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h3>{$name}...欢迎登陆</h3>
+	<table>
+	<a href="javascript:void(0)">主菜单</a>
+			<ul>
+		{volist name="data" id="vo"}
+
+			<li data-y="1-{$vo.level}" data-n="1-{$vo.level+1}">
+			
+				<a href="/index/{$vo.url}">
+				<?php echo str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",$vo['level'])?>
+				{$vo.name}
+				</a>
+			</li>
+
+			
+		{/volist}
+				</ul>
+	</table>
+</body>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$("li").live("click",function(){
+		$(this).siblings().toggle();
+	})
+</script>
+</html>

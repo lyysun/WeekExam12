@@ -1,0 +1,20 @@
+<h3>文档列表</h3>
+	<table border="1">
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>编号</td>
+			<td>标题</td>
+		</tr>
+		<volist name="data" id="vo">
+			<tr>
+				<td><input type="checkbox" name="box" value="{$vo.id}"></td>
+				<td>{$vo.id}</td>
+				<td>{$vo.bt}</td>
+				<td><a href="__URL__/delete/id/{$vo.id}" >单删</a></td>
+			</tr>
+		</volist>
+	</table>
+	<button class="del_all">批删</button>
+	<button onclick="fun1()">全选</button>
+	<button onclick="fun2()">全不选</button>
+	<button onclick="fun3()">反选</button>

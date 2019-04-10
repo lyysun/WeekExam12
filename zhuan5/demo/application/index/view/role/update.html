@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>角色修改页面</title>
+</head>
+<body>
+	<center>
+		<form action="/index/role/doUpdate" method="post">
+			<input type="hidden" name="roleId" value="<?php echo $roleInfo['id'];?>">
+			角色名称：<input type="text" name="roleName" value="<?php echo $roleInfo['roleName'];?>" />
+			<input type="submit" value="修改角色" />
+		</form>
+	</center>
+</body>
+</html>

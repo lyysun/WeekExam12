@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用户管理</title>
+</head>
+<body bgcolor="#abcdef">
+	<center>
+		<form action="/index/user/add" method="post">
+			用户名：<input type="text" name="userName" />
+			密码:<input type="password" name="password" />
+			<input type="submit" value="添加用户" />
+		</form>
+		<hr/>
+		<table border='1px' width="800px">
+			<caption>用户管理</caption>
+			<tr>
+				<th>Id</th>
+				<th>用户名</th>
+				<th>密码</th>
+				<th>操作</th>
+			</tr>
+			<?php
+				foreach($data as $user){
+			?>
+			<tr align="center">
+				<td><?php echo $user['id'];?></td>
+				<td><?php echo $user['userName'];?></td>
+				<td><?php echo $user['password'];?></td>
+				<td>
+				<a href="/index/user/delete/uid/<?php echo $user['id'];?>">删除</a>|<a href="/index/user/update/uid/<?php echo $user['id'];?>">修改</a>|<a href="/index/role/index/uid/<?php echo $user['id'];?>">分配角色</a>
+				</td>
+			</tr>
+			<?php
+			}
+			?>
+		</table>
+	</center>
+</body>
+</html>

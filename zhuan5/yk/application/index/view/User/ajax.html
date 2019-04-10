@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+     ul,li{
+     	list-style: none;
+     	float: left;
+     }
+	</style>
+</head>
+<body>
+	 <p>学生管理>>学生列表</p>
+	 <form action="/index/user/ajax" method="post" onsubmit="return false;">
+	 学生名称<input type="text" name="name" class="name">
+	 学生班级<input type="text" name="bj" class="bj">
+	 <input type="button" value="搜索" class='ss'>
+	 	
+	 </form>
+    <table border="1">
+        <tr>
+            <td>请选择</td>
+            <td>学号</td>
+            <td>学生姓名</td>
+            <td>班级</td>
+            <td>性别</td>
+            <td>添加时间</td>
+            <td>操作</td>
+        </tr>
+        <?php foreach ($data as $k => $v) {?>
+         <tr>
+         <td><input type="checkbox" name="ids" value="<?php echo $v['id']?>"></td>
+             <td><?php echo $v['xh']?></td>
+             <td>
+             <button class="go" data="<?php echo $v['id']?>" status="<?php echo $v['status']?>"> <?php echo $v['name']?>
+             </button>
+             
+             </td>
+             <td><?php echo $v['bj']?></td>
+             <td><?php echo $v['sex']?></td>
+             <td><?php echo (date("Y-m-d H:i:s",time()))?></td>
+             <td><button class="del" data="<?php echo $v['id']?>">删除</button></td>
+
+         </tr>
+       <?php  }?>
+    </table>
+    <button class="fun">全选</button>
+     <button class="fun2">全不选</button>
+     <button class="delall">批删</button>
+    <?php echo $page;?>
+</body>
+</html>

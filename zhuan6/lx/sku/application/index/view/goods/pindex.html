@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <base href="/index/" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <title></title>
+
+  <!-- 引入日期插件 -->
+  <script language="javascript" type="text/javascript" src="carlender/WdatePicker.js"></script>
+  <!-- 引入编辑器插件 -->
+   <script type="text/javascript" charset="utf-8" src="ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="ueditor/ueditor.all.min.js"> </script>
+  
+    <script type="text/javascript" charset="utf-8" src="ueditor/lang/zh-cn/zh-cn.js"></script>
+
+  <link href="styles/general.css" rel="stylesheet" type="text/css" />
+  <link href="styles/main.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/utils.js"></script>
+  <script type="text/javascript" src="js/selectzone.js"></script>
+  <script type="text/javascript" src="js/colorselector.js"></script>
+  <script type="text/javascript" src="js/calendar.php?lang="></script>
+</head>
+
+<h1>
+  <span class="action-span"><a href="{:url('product',['goods_id'=>$goods_id])}">添加新货品</a></span>
+  <span class="action-span1"><a href="index.php?act=main">SHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品列表 </span>
+  <div style="clear:both"></div>
+</h1>
+
+<table width="100%" cellpadding="3" cellspacing="1" id="table_list">
+  <tr>
+     <th>组合id</th>
+     <th>商品id</th>
+     <th>属性组合</th>
+    <th>价格</th>
+     <th>库存</th>
+
+
+  </tr>
+
+    {volist name="productList" id="v"}
+    <tr>
+      <td abbr="center">{$v.product_id}</td>
+        <td abbr="center">{$v.goods_id}</td>
+        <td abbr="center">{$v.attrInfo}</td>
+            <td abbr="center">{$v.goods_price}</td>
+              <td abbr="center">{$v.SKU}</td>
+    </tr>
+    {/volist}
+</table>
+<div id="footer">
+  版权所有 &copy; 2006-2013 软工教育 - 高级PHP - 
+</div>

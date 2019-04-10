@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table id="e">
+      <tr>
+      	<td><button id="fun">█</button>文章管理</td>
+      </tr>
+       <div>
+		  <?php foreach ($data as $k => $v) {?>
+			<tr>
+				<td><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$v['name']?></td>
+			</tr>
+		  <?php }?>
+		 </div>
+	<tr>
+	</table>
+	<form >
+	<table>
+		<td><button>█</button>会员管理</td>
+	</tr>
+	   <?php foreach ($data as $k => $v) {?>
+			<tr>
+				<td><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$v['name']?></td>
+			</tr>
+		  <?php }?>
+		  </table>
+</form>
+<script type="text/javascript" src="/static/jquery-1.8.3.js"></script>
+</body>
+<script type="text/javascript">
+	$("#fun").live('click',function(){
+		// alert(11);
+	$('#e').hide();
+	})
+</script>
+</html>

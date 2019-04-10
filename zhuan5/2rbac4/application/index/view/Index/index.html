@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table>
+	<h3>{$uid},欢迎登陆++++<a href="/index/login/index/">退出登录</a></h3>
+
+</table>
+	   {volist name="data" id="vo"}
+			<li>
+				<a href="/index/{$vo.node}">{$vo.name}</a>
+			</li>
+			{/volist}
+</body>
+</html>

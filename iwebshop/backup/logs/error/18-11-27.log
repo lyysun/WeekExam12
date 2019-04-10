@@ -1,0 +1,197 @@
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:37:26
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:37:26
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:37:26
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:37:35
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:37:35
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:37:35
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:38:10
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:38:10
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+errorInfo: Undefined variable: itme
+errorFile: IWEB_PATH/runtime/views/test/show.php
+errorLine: 13
+errorCode: 8
+errorTime: 2018-11-27 18:38:10
+#0 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/test/show.php)
+#1 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/test/show.php)
+#2 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/test/show,)
+#3 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/test/show,)
+#4 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#5 IWEB_PATH/controllers/test.php(36): IController->redirect(show)
+#6 : Test->show()
+#7 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#8 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#9 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show)
+#10 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#11 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: UPDATE iwebshop_test SET  `name` = '' , `pwd` = ''  WHERE id=
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 166
+excepCode: 1000
+excepTime: 2018-11-27 18:56:14
+#0 IWEB_PATH/lib/web/model/model_class.php(104): IDB->query(UPDATE iwebshop_test SET  `name` = '' , `pwd` = ''  WHERE id=)
+#1 IWEB_PATH/controllers/test.php(61): IModel->update(id=)
+#2 : Test->updo()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(updo)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

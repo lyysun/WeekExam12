@@ -1,0 +1,15 @@
+<ERROR_BLOCK>
+excepInfo: Redis server went away
+excepFile: D:\phpstudy\PHPTutorial\WWW\iwebshop\controllers\moni1.php
+excepLine: 65
+excepCode: 0
+excepTime: 2018-12-13 08:55:23
+#0 IWEB_PATH/controllers/moni1.php(65): Redis->get(nm)
+#1 : MONI1->show1()
+#2 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#3 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#4 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(show1)
+#5 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#6 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

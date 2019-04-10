@@ -1,0 +1,34 @@
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_user WHERE id= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-11-30 14:34:07
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_user WHERE id= limit 50000)
+#1 IWEB_PATH/controllers/simple.php(52): IModel->query(id=)
+#2 : Simple->reg()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(reg)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+
+<ERROR_BLOCK>
+excepInfo: SELECT * FROM iwebshop_user WHERE id= limit 50000
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 50000' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-11-30 14:34:48
+#0 IWEB_PATH/lib/web/model/model_class.php(209): IDB->query(SELECT * FROM iwebshop_user WHERE id= limit 50000)
+#1 IWEB_PATH/controllers/simple.php(52): IModel->query(id=)
+#2 : Simple->reg()
+#3 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#4 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#5 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(reg)
+#6 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#7 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

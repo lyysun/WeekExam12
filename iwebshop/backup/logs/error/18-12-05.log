@@ -1,0 +1,25 @@
+<ERROR_BLOCK>
+excepInfo: select count(*) as total from iwebshop_article_comment as c left join iwebshop_user  as a on c.uid = a.id where c.aid=   
+ -- You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+excepFile: IWEB_PATH/lib/db/db_class.php
+excepLine: 148
+excepCode: 1000
+excepTime: 2018-12-05 14:59:33
+#0 IWEB_PATH/lib/core/paging_class.php(56): IDB->query(select count(*) as total from iwebshop_article_comment as c left join iwebshop_user  as a on c.uid = a.id where c.aid=   )
+#1 IWEB_PATH/lib/core/paging_class.php(41): IPaging->setSql(select c.id,c.content,FROM_UNIXTIME(c.create_time) as create_time,a.username,c.recomment_time,FROM_UNIXTIME(c.recomment_time) as reply_time,c.recontents from iwebshop_article_comment as c left join iwebshop_user  as a on c.uid = a.id where c.aid=   order by c.id desc  )
+#2 IWEB_PATH/lib/core/query_class.php(165): IPaging->__construct(select c.id,c.content,FROM_UNIXTIME(c.create_time) as create_time,a.username,c.recomment_time,FROM_UNIXTIME(c.recomment_time) as reply_time,c.recontents from iwebshop_article_comment as c left join iwebshop_user  as a on c.uid = a.id where c.aid=   order by c.id desc  ,3,10)
+#3 IWEB_PATH/runtime/views/huawei/site/article.php(289): IQuery->find()
+#4 IWEB_PATH/lib/web/controller/controllerbase_class.php(116): require(IWEB_PATH/runtime/views/huawei/site/article.php)
+#5 IWEB_PATH/lib/web/controller/controllerbase_class.php(82): IControllerBase->requireFile(IWEB_PATH/runtime/views/huawei/site/article.php)
+#6 IWEB_PATH/lib/web/controller/controller_class.php(167): IControllerBase->renderView(IWEB_PATH/views/huawei/site/article,)
+#7 IWEB_PATH/lib/web/action/view_action.php(35): IController->render(IWEB_PATH/views/huawei/site/article,)
+#8 IWEB_PATH/lib/web/controller/controller_class.php(374): IViewAction->run()
+#9 IWEB_PATH/controllers/site.php(341): IController->redirect(article)
+#10 : Site->article()
+#11 IWEB_PATH/lib/web/action/inline_action.php(24): call_user_func()
+#12 IWEB_PATH/lib/web/controller/controller_class.php(115): IInlineAction->run()
+#13 IWEB_PATH/lib/core/webapplication_class.php(75): IController->run(article)
+#14 IWEB_PATH/lib/core/application_class.php(94): IWebApplication->execRequest()
+#15 IWEB_PATH/index.php(5): IApplication->run()
+</ERROR_BLOCK>
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base href="/index/" />
+<title>SHOP 管理中心 - 品牌管理 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/general.css" rel="stylesheet" type="text/css" />
+<link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>
+<span class="action-span"><a href="{:url('add')}">添加品牌</a></span>
+<span class="action-span1"><a href="index.php?act=main">SHOP 管理中心</a> </span><span id="search_id" class="action-span1"> - 商品品牌 </span>
+<div style="clear:both"></div>
+</h1>
+
+<div class="form-div">
+  <form action="{:url('index')}" name="searchForm">
+    <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH">
+    商品名称： <input type="text" name="brand_name" size="15">
+    商品分类： <input type="text" name="pid" size="15">
+    <input type="submit" value=" 搜索 " class="button">
+  </form>
+</div>
+
+<form method="post" action="" name="listForm">
+<!-- start brand list -->
+<div class="list-div" id="listDiv">
+
+  <table class="box" cellpadding="3" cellspacing="1">
+    <tbody>
+		<tr>
+			<th>品牌名称</th>
+			<th>品牌网址</th>
+      <th>分类</th>
+			<th>品牌描述</th>
+			<th>排序</th>
+			<th>是否显示</th>
+			<th>操作</th>
+		</tr>
+    {foreach $brandList as $val} 
+        <tr class="trs">
+
+			<td class="first-cell">
+      <input type="checkbox"  name="ids" id="del" value="{$val.brand_id}" />
+      <span style="float:right">
+      <img src="/uploads/{$val.brand_logo}" width="16" height="16" border="0">
+      </span>
+			{$val.brand_name}
+			</td>
+			<td>{$val.site_url}</td>
+       <td>{$val.brand_name}</td>
+
+			<td align="left" >{$val.brand_desc}</td>
+			<td align="right">{$val.sort_order}</td>
+			<td align="center">{$val.is_show}</td>
+			<td align="center">
+				编辑|
+				<a href="{:url('dell',['brand_id'=>$val['brand_id']])}">移除</a>
+			</td>
+		</tr>
+{/foreach}
+	<!--end，这些都是显示代码，没有格式化，开发时会删除 -->
+ 
+  </tbody></table>
+<div class="page">{$page}</div>
+<!-- end brand list -->
+  <button class="del">批删</button>
+</div>
+</form>
+
+
+<div id="footer">
+	版权所有 &copy; 2006-2013 软工教育 - 高级PHP - </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+   $(function(){
+    $(document).on("click",'.page ul li a',function(){
+                    var url=$(this).attr("href");
+                     var brand_name = $('[name="brand_name"]').val();
+                     // alert(brand_name);
+                    // alert(url);
+                    $.get(url,{'brand_name':brand_name},function(msg){
+                          var str='';
+                          //删除原先的
+                         $(".trs").empty();
+                        //换成新的数据
+                        $.each(msg.data,function(k,val){
+                         str+='<tr class="trs"><td class="first-cell"><span style="float:right"><img src="/uploads/'+val.brand_logo+'" width="16" height="16" border="0"></span>'+val.brand_name+'</td><td>'+val.site_url+'</td><td>'+val.pid+'</td><td align="left" >'+val.brand_desc+'</td><td align="right">'+val.sort_order+'</td><td align="center">'+val.is_show+'</td><td align="center">编辑|移除</td></tr>';
+                        })
+                        //换数据
+                        $('.box').append(str);
+                        //换page
+                        $('.page').html(msg.page);
+
+                    })
+                    return false;
+    })
+       
+
+       $(".del").live('click',function(){
+        // alert(1)
+                var ids=[];
+          $('tr>td>input').each(function(){
+            chek=$(this).attr('checked');
+                        if(chek!=undefined){
+                          id=$(this).val();
+                          ids.push(id);
+                          // alert(ids);
+                        }
+                       
+          })
+      
+     
+          alert(ids)
+          $.ajax({
+            url:"/admin/brand/del",
+            typr:'get',
+            data:{ids:ids},
+            success:function(res){
+              // console.log(res);return;
+               if(res=='1'){
+                $("#del").each(function(i,v){
+                       chk=$(v).attr("checked");
+                       if(chk){
+                        $(v).parent().parent().remove();
+                       }
+                })
+               }
+            }
+          })
+
+       })
+
+
+   
+})
+</script>
+</body>
+</html>
