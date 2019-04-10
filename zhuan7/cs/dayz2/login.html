@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<center>
+	
+	<form action="dologin.php" method="post">
+		<table>
+			<tr>
+				<td><input type="text" name="tel"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="pwd"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="登陆"></td>
+			</tr>
+		</table>
+	</form>
+</center>
+	
+</body>
+<script type="text/javascript" src="j.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("[name='tel']").live("blur",function(){
+              tel=$(this).val();
+              // alert(tel)
+              reg=/^[151|136][\d]{9,}$/;
+              if(reg.test(tel)){
+                   // alert("1")
+              }else{
+              	alert("不合法手机号");
+              }
+
+		})
+       
+       	$("[name='pwd']").live("blur",function(){
+              pwd=$(this).val();
+              // alert(pwd)
+              reg=/^\w{6,}$/;
+              if(reg.test(pwd)){
+                   // alert("1")
+              }else{
+              	alert("密码位数6位字符以上");
+              }
+
+		})
+
+	})
+</script>
+</html>

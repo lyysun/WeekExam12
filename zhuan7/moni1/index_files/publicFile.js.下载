@@ -1,0 +1,25 @@
+﻿document.write("<script language=javascript src='//img09.zhaopin.cn/2012/other/mobile/Mcontent/Scripts/ga/globalGA.js?version=1886'></script>");
+// 新版za统计代码引入
+(function (a, e, f, g, b, c, d) { a.ZhaoPinBigdataAnalyticsObject = b; a[b] = a[b] || function () { (a[b].q = a[b].q || []).push(arguments) }; a[b].l = 1 * new Date; a._ATAD_GIB_NIPOAHZ_ || (c = e.createElement(f), d = e.getElementsByTagName(f)[0], c.async = 1, c.src = g, d.parentNode.insertBefore(c, d), a._ATAD_GIB_NIPOAHZ_ = !0) })(window, document, "script", document.location.protocol + "//statistic.zhaopin.cn/sdk/zhaopin_tracker.js", "za");
+za("creat", "A24");
+
+// 神策统计代码引入
+document.write("<script src='//common-bucket.zhaopin.cn/js/zpfe-stat-sdk/zpfe-stat-sdk-latest.js'></script>")
+var zpStatConfig = {
+    page: {
+        appid: 'A24',           // 分配给当前页面的id
+    },
+    sa: {}                      // 神策埋点库相关配置
+}
+
+// 神策页面加载时间
+var start_time = new Date();
+//定义起始时间
+var end_time = "";
+//定义结束时间
+window.onload = function () {
+    end_time = new Date();
+    zpStat.track('pageLoadTime', {
+        loadTime: end_time.getTime() - start_time.getTime()
+    })
+}

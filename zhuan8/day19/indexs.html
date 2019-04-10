@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="">
+	<input type="file" name="file">
+	<input type="button" value="上传" id="sc">
+</form>
+	
+<script type="text/javascript" src="jq.js"></script>
+<script type="text/javascript">
+	$("#sc").click(function(){
+		file=$("input[name='file']").val();
+       $.ajax({
+            url:"img_do.php",
+            type:"post",
+            data:{file:file},
+            dataType:"json",
+            success:function(res){
+                 console.log(res);
+            }
+
+       })
+	})
+
+
+</script>
+
+</body>
+</html>

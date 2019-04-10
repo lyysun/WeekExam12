@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteRule day14.html shpw.php [L]
+</IfModule>

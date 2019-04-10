@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="add.php" method="post">
+	<table>
+		<tr>
+			<td>用户名：<input type="text" name=""></td>
+		</tr>
+		<tr>
+			<td>密码:<input type="text" name="pwd"></td>
+		</tr>
+		<tr>
+			<td>邮箱:<input type="text" name="eamil"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="注册"></td>
+		</tr>
+	</table>
+</form>
+	
+</body>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	$("input[name='pwd']").blur(function(){
+		name=$(this).val();
+		reg=/^\w{6,12}$/;
+		if (reg.test(name)) {
+			
+		}else{
+			alert("输入错误");
+		}
+	})
+	$("input[name='eamil']").blur(function(){
+		email=$(this).val();
+		reg=/^\d{1,}@.com$/;
+		if (reg.test(email)) {
+			
+		}else{
+			alert("输入错误");
+		}
+	})
+</script>
+</html>

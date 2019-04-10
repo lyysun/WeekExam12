@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="add.php" method="post">
+		<table>
+			<tr>
+				<td>用户名</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="text" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>确认密码</td>
+				<td><input type="text" name="qpwd"></td>
+			</tr>
+			<tr>
+				<td>邮箱</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>验证码</td>
+				<td><input type="text" name="yzm"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="注册"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+<script type="text/javascript" src="j.js"></script>
+<script type="text/javascript">
+	$(function(){
+         $("[name='name']").live("blur",function(){
+              name=$(this).val();
+              // alert(name);
+              reg=/^\d{3,16}$/;
+              if(name.match(reg)){
+                   
+              }else{
+              	 alert('3-16字');
+              }
+
+         })
+
+           $("[name='pwd']").live("blur",function(){
+             pwd=$(this).val();
+              // alert(name);
+              reg=/^\d{6,16}$/;
+              if(pwd.match(reg)){
+                   
+              }else{
+              	 alert('3-16字');
+              }
+
+         })
+
+
+           $("[name='email']").live("blur",function(){
+             email=$(this).val();
+              // alert(name);
+              reg=/^\d{6,16}$/;
+              if(email!=''){
+                   
+              }else{
+              	 alert('不能为空');
+              }
+
+         })
+
+	})
+</script>
+</html>

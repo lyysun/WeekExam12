@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="login.php" method="post">
+	<table>
+		<tr>
+			<td>手机号</td>
+			<td><input type="text" name="tel"></td>
+		</tr>
+		<tr>
+			<td>密码</td>
+			<td><input type="text" name="pwd"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="登陆"></td>
+		</tr>
+	</table>
+</form>
+<script type="text/javascript" src="j.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		$("[name='tel']").live("blur",function(){
+               tel=$(this).val();
+               // alert(tel)
+               reg=/^(158|136)\d{9}$/;
+               if(reg.test(tel)){
+
+               }else{
+               	alert("不少于8位");
+               }
+		})
+	})
+</script>
+</body>
+</html>

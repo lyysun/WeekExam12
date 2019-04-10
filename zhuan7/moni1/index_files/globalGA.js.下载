@@ -1,0 +1,30 @@
+﻿//百度统计修改
+var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?08e585d395455886ebe17d4b393b6523";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+
+
+/*
+    用户访问每个页面都要记录cookie，不要删除，不要删除
+*/
+var Lzpauth = localStorage.getItem("zp-auth");
+var Czpauth = document.cookie.indexOf("zp-auth");
+var esbulog = document.cookie.indexOf("esbulog");
+if (Lzpauth != null && (getCookie("zp-auth") != null || Czpauth != -1) && Lzpauth == getCookie("zp-auth") && (getCookie("esbulog") == null || esbulog == -1)) {
+    $.post('/SearchJob/SaveUserLog', { version: '6.3.1' }, function (data) {
+        //console.log(data);
+        //访问接口成功
+    })
+}
+
+function getCookie(objName) {
+    var arrStr = document.cookie.split("; ");
+    for (var i = 0; i < arrStr.length; i++) {
+        var temp = arrStr[i].split("=");
+        if (temp[0] == objName) return unescape(temp[1]);
+    }
+}
